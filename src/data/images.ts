@@ -7,6 +7,7 @@
  */
 export const IMAGES = {
   hero: {
+    garden: '/images/hero-garden.webp',
     villa: '/images/hero-reference-v2.webp',
   },
   mascot: {

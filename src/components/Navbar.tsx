@@ -35,43 +35,43 @@ export default function Navbar() {
           <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-200">
             <Link
               href="/properties"
-              className="hover:text-[#00D26A] transition-colors"
+              className="hover:text-[#00F34A] transition-colors"
             >
               Properties
             </Link>
             <Link
               href="/resorts"
-              className="hover:text-[#00D26A] transition-colors"
+              className="hover:text-[#00F34A] transition-colors"
             >
               Areas
             </Link>
             <Link
               href="/services"
-              className="hover:text-[#00D26A] transition-colors"
+              className="hover:text-[#00F34A] transition-colors"
             >
               Buying
             </Link>
             <Link
               href="/contact?intent=list-property"
-              className="hover:text-[#00D26A] transition-colors"
+              className="hover:text-[#00F34A] transition-colors"
             >
               Selling
             </Link>
             <Link
               href="/services"
-              className="hover:text-[#00D26A] transition-colors"
+              className="hover:text-[#00F34A] transition-colors"
             >
               Services
             </Link>
             <Link
               href="/about"
-              className="hover:text-[#00D26A] transition-colors"
+              className="hover:text-[#00F34A] transition-colors"
             >
               About
             </Link>
             <Link
               href="/contact"
-              className="hover:text-[#00D26A] transition-colors"
+              className="hover:text-[#00F34A] transition-colors"
             >
               Contact
             </Link>
@@ -96,19 +96,19 @@ export default function Navbar() {
                 <div className="absolute right-0 top-full mt-1.5 w-32 bg-[#101623] border border-slate-700/80 rounded-lg shadow-xl py-1 text-xs text-slate-200 z-50">
                   <button
                     onClick={() => setLangDropdown(false)}
-                    className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[#00D26A]/10 hover:text-[#00D26A]"
+                    className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[#00F34A]/10 hover:text-[#00F34A]"
                   >
                     <span>🇬🇧</span> English
                   </button>
                   <button
                     onClick={() => setLangDropdown(false)}
-                    className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[#00D26A]/10 hover:text-[#00D26A]"
+                    className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[#00F34A]/10 hover:text-[#00F34A]"
                   >
                     <span>🇪🇸</span> Español
                   </button>
                   <button
                     onClick={() => setLangDropdown(false)}
-                    className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[#00D26A]/10 hover:text-[#00D26A]"
+                    className="w-full text-left px-3 py-1.5 flex items-center gap-2 hover:bg-[#00F34A]/10 hover:text-[#00F34A]"
                   >
                     <span>🇳🇱</span> Nederlands
                   </button>
@@ -119,7 +119,7 @@ export default function Navbar() {
             {/* Neon Green Pill CTA Button */}
             <Link
               href="/contact"
-              className="bg-[#00D26A] hover:bg-[#00B85C] text-slate-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all shadow-md shadow-[#00D26A]/20 flex items-center gap-2 group"
+              className="bg-[#00F34A] hover:bg-[#00D43E] text-slate-950 font-bold text-xs uppercase tracking-wider px-5 py-2.5 rounded-full transition-all shadow-md shadow-[#00F34A]/20 flex items-center gap-2 group"
             >
               <span>Get in touch</span>
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
@@ -142,49 +142,49 @@ export default function Navbar() {
         <div className="lg:hidden bg-[#0d131f] border-t border-slate-800 px-4 pt-4 pb-6 space-y-3 shadow-2xl">
           <Link
             href="/properties"
-            className="block text-slate-200 hover:text-[#00D26A] py-2 font-medium"
+            className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Properties
           </Link>
           <Link
             href="/resorts"
-            className="block text-slate-200 hover:text-[#00D26A] py-2 font-medium"
+            className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Areas & Golf Resorts
           </Link>
           <Link
             href="/services"
-            className="block text-slate-200 hover:text-[#00D26A] py-2 font-medium"
+            className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Buying in Spain
           </Link>
           <Link
             href="/contact?intent=list-property"
-            className="block text-slate-200 hover:text-[#00D26A] py-2 font-medium"
+            className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Selling Your Property
           </Link>
           <Link
             href="/services"
-            className="block text-slate-200 hover:text-[#00D26A] py-2 font-medium"
+            className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Services & Legal
           </Link>
           <Link
             href="/about"
-            className="block text-slate-200 hover:text-[#00D26A] py-2 font-medium"
+            className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             About Us
           </Link>
           <Link
             href="/contact"
-            className="block text-slate-200 hover:text-[#00D26A] py-2 font-medium"
+            className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"
             onClick={() => setMobileMenuOpen(false)}
           >
             Contact
@@ -193,7 +193,7 @@ export default function Navbar() {
           <div className="pt-3 border-t border-slate-800 flex flex-col gap-2.5">
             <Link
               href="/contact"
-              className="bg-[#00D26A] text-slate-950 font-bold text-xs uppercase tracking-wider py-3 rounded-full text-center flex items-center justify-center gap-2"
+              className="bg-[#00F34A] text-slate-950 font-bold text-xs uppercase tracking-wider py-3 rounded-full text-center flex items-center justify-center gap-2"
               onClick={() => setMobileMenuOpen(false)}
             >
               <span>Get in touch</span>

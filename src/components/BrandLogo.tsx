@@ -17,7 +17,7 @@ export default function BrandLogo({ variant = 'light', className = '' }: BrandLo
           viewBox="0 0 48 48"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
-          className="w-10 h-10 text-[#00D26A] transition-transform duration-300 group-hover:scale-105"
+          className="w-10 h-10 text-[#00F34A] transition-transform duration-300 group-hover:scale-105"
         >
           {/* Central sun half */}
           <path
@@ -50,7 +50,7 @@ export default function BrandLogo({ variant = 'light', className = '' }: BrandLo
           ULTIMATE MURCIA
         </span>
         <span
-          className="font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-[#00D26A] uppercase mt-0.5"
+          className="font-bold text-[10px] sm:text-[11px] tracking-[0.25em] text-[#00F34A] uppercase mt-0.5"
         >
           PROPERTY SALES
         </span>

@@ -5,7 +5,7 @@ import React from 'react';
  */
 export function BrushStroke({
   className = '',
-  color = '#00D26A',
+  color = '#00F34A',
 }: {
   className?: string;
   color?: string;
@@ -30,7 +30,7 @@ export function BrushStroke({
  */
 export function BurstLines({
   className = '',
-  color = '#00D26A',
+  color = '#00F34A',
 }: {
   className?: string;
   color?: string;
@@ -52,7 +52,7 @@ export function BurstLines({
  */
 export function PaintSplash({
   className = '',
-  color = '#00D26A',
+  color = '#00F34A',
 }: {
   className?: string;
   color?: string;

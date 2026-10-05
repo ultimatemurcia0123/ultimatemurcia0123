@@ -3,8 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #090d16;
-  --color-emerald-accent: #00D26A;
-  --color-emerald-hover: #00B85C;
+  --color-emerald-accent: #00F34A;
+  --color-emerald-hover: #00D43E;
   --color-emerald-light: #E6FBF0;
   --color-onyx-dark: #080C14;
   --color-onyx-card: #101623;
@@ -71,12 +71,12 @@ body {
   font-weight: 800;
   letter-spacing: 0.35em;
   text-transform: uppercase;
-  color: #00D26A;
+  color: #00F34A;
 }
 
 /* Neon text glow for the green headline words */
 .text-glow {
-  text-shadow: 0 0 40px rgba(0, 210, 106, 0.35);
+  text-shadow: 0 0 40px rgba(0, 243, 74, 0.35);
 }
 
 /* Polaroid photo frame */
@@ -109,5 +109,76 @@ body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #00D26A;
+  background: #00F34A;
+}
+
+/* Homepage composition follows the supplied full-page art reference. */
+.home-hero { background: #03090b; }
+.home-hero-stage { position: relative; height: clamp(410px, 40vw, 590px); }
+.home-hero-scene { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 36%; }
+.home-hero-shade { position: absolute; inset: 0; background: linear-gradient(0deg, #03090b 0%, transparent 19%), linear-gradient(90deg, transparent 23%, rgb(0 10 20 / 16%) 50%, transparent 78%); }
+.home-hero-copy { position: relative; z-index: 1; width: 61%; margin: auto; text-align: center; padding-top: clamp(24px, 3vw, 48px); }
+.home-hero-copy h1 { font-size: clamp(94px, 9.5vw, 148px); margin-top: 15px; text-shadow: 0 4px 15px rgb(0 0 0 / 20%); }
+.home-hero-copy p { font-size: clamp(14px, 1.35vw, 19px); line-height: 1.55; margin-top: 18px; text-shadow: 0 1px 8px #06111d; }
+.home-primary-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 13px 25px; border-radius: 999px; background: #00f34a; color: #031208; font-size: 12px; font-weight: 800; transition: background .2s, transform .2s; }
+.home-primary-button:hover { background: #00d43e; transform: translateY(-2px); }
+.home-video-button { display: inline-flex; gap: 10px; align-items: center; border: 1px solid white; background: rgb(0 8 15 / 55%); padding: 8px 22px 8px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
+.home-video-button:hover { background: rgb(0 8 15 / 85%); }
+.home-life-sticker { position: absolute; left: 3.5%; top: 11%; transform: rotate(-10deg); z-index: 1; }
+.home-sun-sticker { position: absolute; left: 75%; top: 8%; transform: rotate(-12deg); font-family: var(--font-marker); text-transform: uppercase; font-size: clamp(16px, 1.8vw, 27px); line-height: 1.05; z-index: 1; }
+.home-hero-tools { margin-top: -37px; }
+.home-search { position: relative; }
+.home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: linear-gradient(90deg, rgb(0 9 12 / 60%), #030d13 35%, #030d13 65%, rgb(0 9 12 / 55%)), url('/images/hero-reference-v2.webp') center 55% / cover; }
+.home-discover-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; gap: 38px; }
+.home-discover-copy { text-align: center; }
+.home-discover-copy h2 { font-size: clamp(34px, 3.8vw, 57px); line-height: .98; }
+.home-polaroid { position: relative; isolation: isolate; background: white; padding: 7px; border-radius: 12px; box-shadow: 0 14px 32px rgb(0 0 0 / 40%); transform: rotate(-5deg); }
+.home-polaroid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 7px; }
+.home-polaroid-golf { transform: rotate(7deg); }
+.home-polaroid figcaption { position: absolute; right: -14px; bottom: -20px; padding: 8px 18px; background: white; color: #05090c; font-family: var(--font-marker); text-transform: uppercase; font-size: clamp(15px, 1.6vw, 22px); line-height: 1.05; transform: rotate(-9deg); clip-path: polygon(3% 5%, 97% 0, 95% 13%, 100% 20%, 96% 32%, 100% 42%, 96% 55%, 100% 67%, 95% 75%, 98% 88%, 0 100%, 4% 86%, 0 73%, 4% 60%, 0 45%, 5% 31%, 0 18%); }
+.home-help { position: relative; overflow: hidden; padding: 35px 0 20px; background: #fafafa; }
+.home-help-photo { position: absolute; right: 0; top: 0; bottom: 0; width: 39%; background: linear-gradient(90deg, #fafafa, transparent 22%), url('/images/preview-terrace.webp') center / cover; }
+.home-help-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 36px; width: 68%; margin-bottom: 24px; }
+.home-help-cards { display: grid; grid-template-columns: repeat(4, 1fr); width: 84%; gap: 7px; }
+.home-help-card { display: flex; align-items: flex-start; gap: 12px; border: 1px solid #e6e8eb; background: rgb(255 255 255 / 96%); border-radius: 9px; padding: 16px 12px; }
+.home-help-card > div { padding-top: 20px; }
+.home-page .eyebrow { color: #00bd39; }
+.home-hero .eyebrow, .home-discover .eyebrow { color: #00f34a; }
+@media (min-width: 1600px) {
+  .home-hero-scene { object-position: center 40%; }
+}
+@media (max-width: 1023px) and (min-width: 768px) {
+  .home-hero-copy { width: 65%; padding-top: 35px; }
+  .home-hero-copy h1 { font-size: 88px; }
+  .home-sun-sticker { left: 76%; font-size: 17px; }
+  .home-life-sticker { left: 2%; }
+  .home-discover-grid { gap: 20px; grid-template-columns: 1fr 2fr 1fr; }
+  .home-help-intro { width: 82%; }
+  .home-help-cards { width: 100%; }
+  .home-help-card { flex-direction: column; }
+  .home-help-card > div { padding-top: 0; }
+}
+@media (max-width: 767px) {
+  .home-hero-stage { height: auto; padding-bottom: 210px; }
+  .home-hero-copy { width: 100%; padding: 32px 18px 8px; }
+  .home-hero-copy h1 { font-size: clamp(68px, 15vw, 102px); }
+  .home-hero-copy p { font-size: 13px; }
+  .home-hero-copy .eyebrow { font-size: 9px; letter-spacing: .28em; }
+  .home-hero-scene { inset: auto 0 0; height: 240px; object-position: right center; }
+  .home-hero-shade { background: linear-gradient(0deg, #03090b 0%, transparent 15%, transparent 37%, #03090b 52%); }
+  .home-life-sticker, .home-sun-sticker { display: none; }
+  .home-hero-tools { margin-top: -20px; }
+  .home-primary-button { padding: 12px 20px; }
+  .home-discover { padding: 35px 0 45px; }
+  .home-discover-grid { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .home-discover-copy { grid-column: 1 / -1; grid-row: 1; }
+  .home-discover-copy h2 { font-size: clamp(36px, 7vw, 48px); }
+  .home-polaroid { max-width: 220px; width: 100%; justify-self: center; }
+  .home-polaroid figcaption { font-size: 15px; }
+  .home-help { padding: 32px 0; }
+  .home-help-photo { opacity: .13; width: 100%; }
+  .home-help-intro { width: 100%; grid-template-columns: 1fr; gap: 20px; }
+  .home-help-cards { width: 100%; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .home-help-card { flex-direction: column; }
+  .home-help-card > div { padding-top: 0; }
 }

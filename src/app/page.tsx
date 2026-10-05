@@ -17,19 +17,19 @@ export default function HomePage() {
   const { featuredPropertiesSection } = SITE_CONTENT;
 
   return (
-    <div>
+    <div className="home-page">
       {/* 1. Hero & Real Estate Search Filter (Mockup Match) */}
       <HeroSearch />
 
       {/* 2. Featured Properties / Our Latest Properties (Mockup Match) */}
-      <section className="py-20 sm:py-28 bg-white border-b border-slate-100">
+      <section className="py-8 sm:py-10 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-5 gap-4">
             <div>
-              <span className="text-xs font-black tracking-[0.25em] text-[#00D26A] uppercase block mb-2">
+              <span className="text-xs font-black tracking-[0.25em] text-[#00F34A] uppercase block mb-2">
                 {featuredPropertiesSection.badge}
               </span>
-              <h2 className="text-3xl sm:text-5xl font-black text-slate-950 uppercase tracking-tight italic">
+              <h2 className="display-title text-4xl sm:text-6xl text-slate-950">
                 {featuredPropertiesSection.title}
               </h2>
             </div>
@@ -38,7 +38,7 @@ export default function HomePage() {
             <div className="flex items-center gap-4">
               <Link
                 href={featuredPropertiesSection.viewAllLink}
-                className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-800 hover:text-[#00D26A] transition-colors flex items-center gap-1.5"
+                className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-800 hover:text-[#00F34A] transition-colors flex items-center gap-1.5"
               >
                 <span>{featuredPropertiesSection.viewAllText}</span>
                 <ArrowRight className="w-4 h-4" />
@@ -64,12 +64,13 @@ export default function HomePage() {
           </div>
 
           {/* 3 Top Property Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {latestProperties.map((property) => (
-              <PropertyCard key={property.id} property={property} />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {latestProperties.map((property, index) => (
+              <PropertyCard key={property.id} property={property} imageSrc={["/images/preview-villa.webp", "/images/preview-terrace.webp", "/images/preview-pool.webp"][index]} />
             ))}
           </div>
 
+          <p className="mt-3 text-[11px] text-slate-500">Illustrative property imagery for this design preview.</p>
           <div className="text-center mt-12 sm:hidden">
             <Link
               href="/properties"
@@ -92,7 +93,7 @@ export default function HomePage() {
       <section className="py-20 sm:py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-black tracking-[0.25em] text-[#00D26A] uppercase block mb-2">
+            <span className="text-xs font-black tracking-[0.25em] text-[#00F34A] uppercase block mb-2">
               DISCOVER COSTA CÁLIDA
             </span>
             <h2 className="text-3xl sm:text-4xl font-black text-slate-950 uppercase tracking-tight">
@@ -113,7 +114,7 @@ export default function HomePage() {
           <div className="text-center mt-12">
             <Link
               href="/resorts"
-              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-slate-800 hover:text-[#00D26A] transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-slate-800 hover:text-[#00F34A] transition-colors"
             >
               <span>View All Murcia Resort & Area Guides →</span>
             </Link>
@@ -129,7 +130,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="bg-[#101725] rounded-3xl p-8 sm:p-12 border border-slate-700/60 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs font-black tracking-[0.25em] text-[#00D26A] uppercase">
+              <span className="text-xs font-black tracking-[0.25em] text-[#00F34A] uppercase">
                 Are You Thinking of Selling?
               </span>
               <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
@@ -144,7 +145,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
               <Link
                 href="/contact?intent=list-property"
-                className="bg-[#00D26A] hover:bg-[#00B85C] text-slate-950 font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-full text-center transition-all shadow-md shadow-[#00D26A]/20"
+                className="bg-[#00F34A] hover:bg-[#00D43E] text-slate-950 font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-full text-center transition-all shadow-md shadow-[#00F34A]/20"
               >
                 Request Free Valuation
               </Link>
