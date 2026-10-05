@@ -183,13 +183,13 @@ export default function HeroSearch() {
         </div>
 
         {/* Value pillars */}
-        <div className="py-7 grid grid-cols-2 lg:grid-cols-4 gap-y-6 lg:divide-x divide-slate-700/60">
+        <div className="home-benefits">
           {hero.valuePillars.map((pillar) => {
             const Icon = PILLAR_ICONS[pillar.iconType];
             return (
-              <div key={pillar.title} className="flex items-center gap-4 lg:justify-center px-2">
+              <div key={pillar.title} className="home-benefit">
                 <Icon className="w-10 h-10 sm:w-11 sm:h-11 text-[#00F34A] shrink-0" strokeWidth={1.6} />
-                <div>
+                <div className="min-w-0">
                   <h3 className="text-xs sm:text-sm font-bold text-white">{pillar.title}</h3>
                   <p className="text-[11px] sm:text-xs text-slate-300">{pillar.subtitle}</p>
                 </div>
