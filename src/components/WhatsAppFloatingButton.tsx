@@ -1,0 +1,39 @@
+'use client';
+
+import React, { useState } from 'react';
+import { MessageSquare, X } from 'lucide-react';
+
+export default function WhatsAppFloatingButton() {
+  const [showTooltip, setShowTooltip] = useState(true);
+
+  return (
+    <div className="fixed bottom-6 right-6 z-50 flex items-end gap-3">
+      {showTooltip && (
+        <div className="hidden sm:flex items-center gap-2 bg-white text-slate-800 text-xs py-2 px-3.5 rounded-full shadow-xl border border-slate-200/80 animate-fade-in">
+          <span>Need property advice? <strong>Chat with Christine</strong></span>
+          <button
+            onClick={() => setShowTooltip(false)}
+            className="text-slate-400 hover:text-slate-600 ml-1"
+            aria-label="Dismiss tooltip"
+          >
+            <X className="w-3.5 h-3.5" />
+          </button>
+        </div>
+      )}
+
+      <a
+        href="https://wa.me/34617633040?text=Hello%20Ultimate%20Murcia%2C%20I%20am%20interested%20in%20properties%20in%20Murcia"
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label="Chat on WhatsApp"
+        className="group relative flex items-center justify-center w-14 h-14 bg-emerald-500 hover:bg-emerald-600 text-white rounded-full shadow-2xl hover:shadow-emerald-500/40 transition-all duration-300 hover:scale-105"
+      >
+        <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+          <span className="relative inline-flex rounded-full h-3.5 w-3.5 bg-emerald-400"></span>
+        </span>
+        <MessageSquare className="w-7 h-7" />
+      </a>
+    </div>
+  );
+}
