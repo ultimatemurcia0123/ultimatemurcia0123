@@ -23,7 +23,7 @@ export default function Navbar() {
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
           ? 'bg-[#080C14]/95 backdrop-blur-md shadow-lg shadow-black/30 py-3 border-b border-slate-800/80'
-          : 'bg-[#080C14] py-4 border-b border-slate-800/50'
+          : 'bg-[#03090C] py-2 border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,7 +32,7 @@ export default function Navbar() {
           <BrandLogo variant="light" />
 
           {/* Desktop Navigation Links (exact match from mockup) */}
-          <nav className="hidden lg:flex items-center gap-6 xl:gap-8 text-sm font-semibold text-slate-200">
+          <nav className="hidden lg:flex items-center gap-5 xl:gap-7 text-xs font-semibold text-slate-200">
             <Link
               href="/properties"
               className="hover:text-[#00F34A] transition-colors"

@@ -24,3 +24,13 @@ Coast: Standalone 4:3 travel photograph matching the reference's lower-left phot
 Golf: Standalone 4:3 travel photograph matching the reference's lower-right photo: manicured green golf course, putting green, palms and Mediterranean villas, blue mountain ridge and clear sky. Match the reference's viewpoint and sunny green and blue palette. No frame, text, labels, paint strokes, UI, logo or watermark.
 
 The mascot and foliage are one composition on the homepage so responsive image sizing cannot separate them. Mobile moves the scenery below the main copy to preserve legibility.
+
+## Reference fidelity revision
+
+- `public/images/discover-palms.webp`: built-in image generation, reference-guided 3:1 nearly black tropical palm scene with cream villa edge and subtle green brush accents, empty dark center, no text or UI.
+- `public/images/help-architecture.webp`: built-in image generation, reference-guided portrait photo of an angular cream villa canopy, warm recessed lights, glass walls, beige sofa and palms; no text or UI.
+- `public/images/sun-golf-lettering.webp`: built-in image generation, recreate the reference's white stacked SUN / GOLF / SEA / A BRIGHTER / TOMORROW lettering and neon green dry-brush marks on transparent background.
+- `public/images/life-murcia-lettering.svg`: hand-drawn vector letter strokes for LIFE / IN / MURCIA with green underline. Generated variants were rejected for poor small-size legibility.
+- BrandLogo uses fine triangular sunburst rays and a compact wordmark matching the supplied logo's proportions.
+
+The homepage now follows the four sections shown in the supplied mockup. Resort guides, testimonials and sales calls to action remain available through the site's other pages.

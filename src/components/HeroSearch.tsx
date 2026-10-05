@@ -20,7 +20,6 @@ import {
 import { RESORTS_DATA } from '@/data/resorts';
 import { SITE_CONTENT } from '@/data/site-content';
 import { IMAGES } from '@/data/images';
-import { MarkerText, BurstLines, BrushStroke } from '@/components/decor/Brush';
 
 const PILLAR_ICONS = {
   palm: Palmtree,
@@ -92,14 +91,10 @@ export default function HeroSearch() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={IMAGES.hero.garden} alt="Sunny pointing across a Mediterranean villa and pool, surrounded by flowering tropical plants" className="home-hero-scene" width={1774} height={887} fetchPriority="high" />
         <div className="home-hero-shade" />
-        <div className="home-life-sticker" aria-hidden="true">
-          <MarkerText lines={hero.stickerLife.split(' ')} className="text-3xl xl:text-4xl" />
-        </div>
-        <div className="home-sun-sticker" aria-hidden="true">
-          <BurstLines className="absolute -left-7 -top-7 w-12 h-12" />
-          {hero.stickerSunSeaGolf.split('|').map((line) => <span key={line} className="block">{line}</span>)}
-          <BrushStroke className="w-28 h-2 mt-2" />
-        </div>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/life-murcia-lettering.svg" alt="Life in Murcia" className="home-life-sticker" />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src="/images/sun-golf-lettering.webp" alt="Sun. Golf. Sea. A brighter tomorrow." className="home-sun-sticker" />
         <div className="home-hero-copy">
           <div className="eyebrow">{hero.badgeTop}</div>
           <h1 className="display-title">
