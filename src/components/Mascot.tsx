@@ -6,8 +6,7 @@ export type MascotPose = keyof typeof IMAGES.mascot;
 /**
  * "Sunny" — the Ultimate Murcia mascot.
  *
- * Swap the artwork by replacing the files listed in IMAGES.mascot
- * (transparent PNG/WebP, portrait). Every page picks a pose.
+ * The artwork is registered in IMAGES.mascot (transparent WebP, portrait).
  */
 export default function Mascot({
   pose = 'point',
@@ -25,7 +24,9 @@ export default function Mascot({
     <img
       src={IMAGES.mascot[pose]}
       alt="Sunny, the Ultimate Murcia mascot"
-      className={`select-none pointer-events-none drop-shadow-[0_20px_40px_rgba(0,0,0,0.45)] ${
+      width={1108}
+      height={1420}
+      className={`select-none pointer-events-none drop-shadow-[0_12px_24px_rgba(0,0,0,0.3)] ${
         float ? 'animate-float' : ''
       } ${className}`}
       loading={priority ? 'eager' : 'lazy'}

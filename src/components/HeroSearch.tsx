@@ -94,13 +94,12 @@ export default function HeroSearch() {
         <img
           src={IMAGES.hero.villa}
           alt="Luxury villa with infinity pool at dusk in Murcia"
-          className="w-full h-full object-cover object-center scale-105"
+          className="w-full h-full object-cover object-center"
           fetchPriority="high"
         />
-        <div className="absolute inset-0 bg-[#060A12]/45" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(6,10,18,0.55)_0%,rgba(6,10,18,0.1)_55%,transparent_75%)]" />
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-[#080C14] to-transparent" />
-        <div className="absolute inset-x-0 bottom-0 h-[55%] bg-gradient-to-t from-[#080C14] via-[#080C14]/85 to-transparent" />
+        <div className="absolute inset-0 bg-[#060A12]/15" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#080C14]/65 to-transparent" />
+        <div className="absolute inset-x-0 bottom-0 h-[45%] bg-gradient-to-t from-[#080C14] via-[#080C14]/80 to-transparent" />
       </div>
 
       {/* Left marker sticker: LIFE IN MURCIA */}
@@ -109,8 +108,8 @@ export default function HeroSearch() {
       </div>
 
       {/* Right: mascot + sun/golf/sea sticker */}
-      <div className="absolute right-0 top-2 sm:top-6 z-20 pointer-events-none flex items-start justify-end max-w-[200px] sm:max-w-[280px] md:max-w-[380px] lg:max-w-[500px]">
-        <div className="hidden md:block absolute -left-24 lg:-left-32 top-8 lg:top-14 -rotate-[10deg] z-10 animate-wiggle origin-bottom-left">
+      <div className="hidden lg:block absolute -right-8 top-2 z-20 pointer-events-none w-[300px] xl:w-[340px]">
+        <div className="absolute -left-20 top-10 xl:top-16 -rotate-[10deg] z-10 origin-bottom-left">
           <BurstLines className="absolute -left-10 -top-8 w-14 h-14" />
           <div className="font-marker uppercase text-white text-xl lg:text-2xl xl:text-[2rem] leading-[1.05] drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
             {hero.stickerSunSeaGolf.split('|').map((l) => (
@@ -125,15 +124,16 @@ export default function HeroSearch() {
         <Mascot
           pose="point"
           priority
-          className="h-44 sm:h-64 md:h-80 lg:h-[480px] xl:h-[560px] w-auto max-w-none object-contain object-right-top"
+          float={false}
+          className="block w-full h-auto"
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-20 pb-10">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 md:pt-16 pb-10">
         {/* Headline */}
         <div className="text-center max-w-3xl mx-auto animate-fade-up">
           <div className="eyebrow mb-5">{hero.badgeTop}</div>
-          <h1 className="display-title text-[4.2rem] leading-[0.85] sm:text-8xl lg:text-[9.5rem]">
+          <h1 className="display-title text-[4.2rem] leading-[0.85] sm:text-8xl lg:text-[8rem] xl:text-[9rem]">
             <span className="block text-white drop-shadow-[0_6px_30px_rgba(0,0,0,0.5)]">
               {hero.headlinePart1}
             </span>
@@ -164,8 +164,18 @@ export default function HeroSearch() {
           </div>
         </div>
 
+        <div className="relative h-48 sm:h-60 lg:hidden mt-4 pointer-events-none">
+          <div className="absolute right-36 sm:right-44 top-5 -rotate-[8deg] font-marker text-white text-lg sm:text-2xl leading-tight">
+            {hero.stickerSunSeaGolf.split('|').slice(0, 3).map((line) => (
+              <span key={line} className="block">{line}</span>
+            ))}
+            <BrushStroke className="w-24 h-2 mt-2" />
+          </div>
+          <Mascot pose="point" float={false} className="absolute right-0 bottom-0 w-36 sm:w-44 h-auto" />
+        </div>
+
         {/* Search card with tabs */}
-        <div className="mt-14 lg:mt-20 animate-fade-up [animation-delay:150ms]">
+        <div className="mt-14 lg:mt-16 animate-fade-up [animation-delay:150ms]">
           <div className="inline-flex items-center gap-1 rounded-t-2xl bg-[#0D1424]/95 backdrop-blur-xl border border-b-0 border-slate-700/60 px-3 pt-3 pb-2">
             {hero.tabs.map((tab) => {
               const isActive = activeTab === tab;

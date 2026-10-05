@@ -7,14 +7,14 @@
  */
 export const IMAGES = {
   hero: {
-    villa: '/images/hero-villa.webp',
+    villa: '/images/hero-reference-v2.webp',
   },
   mascot: {
-    point: '/images/mascot/mascot-point.webp',
+    point: '/images/mascot/mascot-point-v2.webp',
     // Extra poses fall back to the main artwork until dedicated art is added.
-    wave: '/images/mascot/mascot-point.webp',
-    keys: '/images/mascot/mascot-point.webp',
-    golf: '/images/mascot/mascot-point.webp',
+    wave: '/images/mascot/mascot-point-v2.webp',
+    keys: '/images/mascot/mascot-point-v2.webp',
+    golf: '/images/mascot/mascot-point-v2.webp',
   },
   discover: {
     coast: '/images/discover-coast.webp',

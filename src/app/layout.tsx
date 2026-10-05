@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     siteName: 'Ultimate Murcia Property Sales',
     images: [
       {
-        url: '/images/hero-villa.webp',
+        url: '/images/hero-reference-v2.webp',
         width: 1200,
         height: 630,
         alt: 'Ultimate Murcia Property Sales',
