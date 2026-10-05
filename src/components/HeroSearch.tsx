@@ -109,23 +109,23 @@ export default function HeroSearch() {
       </div>
 
       {/* Right: mascot + sun/golf/sea sticker */}
-      <div className="hidden lg:block absolute right-0 top-6 bottom-[42%] w-[34%] max-w-[520px] z-20 pointer-events-none">
-        <div className="absolute left-0 top-6 -rotate-[10deg] z-10 animate-wiggle origin-bottom-left">
-          <BurstLines className="absolute -left-12 -top-10 w-16 h-16" />
-          <div className="font-marker uppercase text-white text-2xl xl:text-[2rem] leading-[1.05] drop-shadow-[0_2px_6px_rgba(0,0,0,0.6)]">
+      <div className="absolute right-0 top-2 sm:top-6 z-20 pointer-events-none flex items-start justify-end max-w-[200px] sm:max-w-[280px] md:max-w-[380px] lg:max-w-[500px]">
+        <div className="hidden md:block absolute -left-24 lg:-left-32 top-8 lg:top-14 -rotate-[10deg] z-10 animate-wiggle origin-bottom-left">
+          <BurstLines className="absolute -left-10 -top-8 w-14 h-14" />
+          <div className="font-marker uppercase text-white text-xl lg:text-2xl xl:text-[2rem] leading-[1.05] drop-shadow-[0_2px_6px_rgba(0,0,0,0.7)]">
             {hero.stickerSunSeaGolf.split('|').map((l) => (
               <span key={l} className="block">
                 {l}
               </span>
             ))}
           </div>
-          <BrushStroke className="w-44 h-3 mt-1" />
-          <BurstLines className="absolute -right-10 bottom-2 w-14 h-14 rotate-180" />
+          <BrushStroke className="w-36 lg:w-44 h-3 mt-1" />
+          <BurstLines className="absolute -right-8 bottom-2 w-12 h-12 rotate-180" />
         </div>
         <Mascot
           pose="point"
           priority
-          className="absolute right-0 top-0 h-full w-auto max-w-none object-contain object-right-top"
+          className="h-44 sm:h-64 md:h-80 lg:h-[480px] xl:h-[560px] w-auto max-w-none object-contain object-right-top"
         />
       </div>
 

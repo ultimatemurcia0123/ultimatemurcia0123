@@ -54,17 +54,17 @@ export default function PageHero({
           </div>
 
           {mascot && (
-            <div className="hidden lg:block lg:col-span-4 relative h-full min-h-[340px]">
+            <div className="relative flex justify-center lg:justify-end items-end col-span-12 lg:col-span-4 min-h-[220px] sm:min-h-[280px] lg:min-h-[340px]">
               {sticker && (
-                <div className="absolute -left-6 top-4 z-10 -rotate-[8deg]">
-                  <BurstLines className="absolute -left-10 -top-6 w-14 h-14" />
-                  <MarkerText lines={sticker} className="text-2xl xl:text-3xl" />
+                <div className="absolute left-4 lg:-left-6 top-2 lg:top-4 z-10 -rotate-[8deg]">
+                  <BurstLines className="absolute -left-8 -top-6 w-12 h-12" />
+                  <MarkerText lines={sticker} className="text-xl sm:text-2xl xl:text-3xl" />
                 </div>
               )}
               <Mascot
                 pose={mascot}
                 priority
-                className="absolute bottom-[-5.5rem] right-0 h-[440px] w-auto object-contain"
+                className="h-56 sm:h-72 md:h-80 lg:h-[380px] w-auto object-contain object-bottom"
               />
             </div>
           )}
