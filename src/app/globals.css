@@ -1,27 +1,25 @@
 @import "tailwindcss";
 
 :root {
-  --background: #faf8f5;
-  --foreground: #0f172a;
-  --navy-primary: #0b1a2f;
-  --navy-secondary: #132742;
-  --gold-accent: #c49e5d;
-  --gold-light: #dfc89d;
-  --sand-50: #fbf9f5;
-  --sand-100: #f3efe6;
-  --sand-200: #e5dec9;
+  --background: #ffffff;
+  --foreground: #090d16;
+  --color-emerald-accent: #00D26A;
+  --color-emerald-hover: #00B85C;
+  --color-emerald-light: #E6FBF0;
+  --color-onyx-dark: #080C14;
+  --color-onyx-card: #101623;
+  --color-onyx-border: #1E2738;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-navy-primary: var(--navy-primary);
-  --color-navy-secondary: var(--navy-secondary);
-  --color-gold-accent: var(--gold-accent);
-  --color-gold-light: var(--gold-light);
-  --color-sand-50: var(--sand-50);
-  --color-sand-100: var(--sand-100);
-  --color-sand-200: var(--sand-200);
+  --color-emerald-accent: var(--color-emerald-accent);
+  --color-emerald-hover: var(--color-emerald-hover);
+  --color-emerald-light: var(--color-emerald-light);
+  --color-onyx-dark: var(--color-onyx-dark);
+  --color-onyx-card: var(--color-onyx-card);
+  --color-onyx-border: var(--color-onyx-border);
 }
 
 html {
@@ -34,17 +32,24 @@ body {
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-/* Custom subtle luxury scrollbars */
+/* Dynamic display heading slant like in mockup */
+.display-title {
+  font-weight: 900;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Custom subtle scrollbars */
 ::-webkit-scrollbar {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #f1ede4;
+  background: #080C14;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4c5a9;
+  background: #1E2738;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #c49e5d;
+  background: #00D26A;
 }

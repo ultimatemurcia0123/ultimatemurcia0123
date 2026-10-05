@@ -1,13 +1,14 @@
 import type { Metadata } from 'next';
-import { Playfair_Display, Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton';
 
-const playfair = Playfair_Display({
+const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-serif',
+  variable: '--font-display',
+  weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
@@ -18,28 +19,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Ultimate Murcia Property Sales | Luxury Golf Resorts & Costa Cálida Real Estate',
+  metadataBase: new URL('https://ultimatemurcia.com'),
+  title: 'Ultimate Murcia Property Sales | More Than A Home • Costa Cálida & Golf Specialists',
   description:
-    'Reliable, licensed, and AIPP-approved estate agents in Murcia, Spain. Discover luxury golf villas, lagoon residences in Santa Rosalía, and apartments across Costa Cálida.',
+    'Exceptional properties. A brighter lifestyle. We help you buy or sell in Murcia and Costa Cálida. Luxury golf resort villas, lagoon residences, and coastal apartments.',
   keywords: [
     'Murcia property sales',
     'Costa Calida real estate',
     'Santa Rosalia Lake and Life Resort villas',
     'La Torre Golf Resort apartments',
     'Hacienda Riquelme property',
-    'El Valle Golf villas',
+    'Roda Golf Resort',
+    'Altaona Golf Resort',
     'Spain golf property for sale',
   ],
   authors: [{ name: 'Ultimate Murcia Property Sales' }],
   openGraph: {
-    title: 'Ultimate Murcia Property Sales | Costa Cálida Real Estate',
+    title: 'Ultimate Murcia Property Sales | More Than A Home',
     description:
-      'Discover villas, penthouses, and resort properties in Murcia, Spain with our AIPP-approved team.',
+      'Exceptional properties. A brighter lifestyle. Luxury villas, penthouses, and golf resorts in Murcia, Spain.',
     url: 'https://ultimatemurcia.com',
     siteName: 'Ultimate Murcia Property Sales',
     images: [
       {
-        url: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+        url: '/images/design-mockup.jpeg',
         width: 1200,
         height: 630,
         alt: 'Ultimate Murcia Property Sales',
@@ -56,8 +59,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} scroll-smooth`}>
-      <body className="font-sans min-h-screen flex flex-col bg-[#faf8f5] text-slate-900 antialiased selection:bg-amber-400 selection:text-slate-900">
+    <html lang="en" className={`${jakarta.variable} ${inter.variable} scroll-smooth`}>
+      <body className="font-sans min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-[#00D26A] selection:text-slate-950">
         <Navbar />
         <main className="flex-grow">{children}</main>
         <Footer />

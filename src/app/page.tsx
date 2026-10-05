@@ -1,95 +1,119 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, Sparkles, Building2, ShieldCheck, PhoneCall } from 'lucide-react';
+import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
 import HeroSearch from '@/components/HeroSearch';
 import PropertyCard from '@/components/PropertyCard';
 import ResortCard from '@/components/ResortCard';
-import WhyChooseUs from '@/components/WhyChooseUs';
-import ServicesSection from '@/components/ServicesSection';
+import DiscoverMurciaSection from '@/components/DiscoverMurciaSection';
+import HowWeHelpSection from '@/components/HowWeHelpSection';
 import TestimonialsSection from '@/components/TestimonialsSection';
 import { PROPERTIES_DATA } from '@/data/properties';
 import { RESORTS_DATA } from '@/data/resorts';
+import { SITE_CONTENT } from '@/data/site-content';
 
 export default function HomePage() {
-  const featuredProperties = PROPERTIES_DATA.filter((p) => p.featured).slice(0, 6);
-  const featuredResorts = RESORTS_DATA.slice(0, 6);
+  const latestProperties = PROPERTIES_DATA.slice(0, 3);
+  const featuredResorts = RESORTS_DATA.slice(0, 3);
+  const { featuredPropertiesSection } = SITE_CONTENT;
 
   return (
     <div>
-      {/* 1. Hero & Real Estate Search Filter */}
+      {/* 1. Hero & Real Estate Search Filter (Mockup Match) */}
       <HeroSearch />
 
-      {/* 2. Featured & Newly Listed Properties */}
-      <section className="py-20 bg-[#faf8f5]">
+      {/* 2. Featured Properties / Our Latest Properties (Mockup Match) */}
+      <section className="py-20 sm:py-28 bg-white border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 gap-4">
             <div>
-              <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-700 mb-2">
-                <Sparkles className="w-3.5 h-3.5" />
-                Hand-Picked Resort Listings
-              </div>
-              <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900">
-                Featured Properties For Sale
+              <span className="text-xs font-black tracking-[0.25em] text-[#00D26A] uppercase block mb-2">
+                {featuredPropertiesSection.badge}
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-black text-slate-950 uppercase tracking-tight italic">
+                {featuredPropertiesSection.title}
               </h2>
-              <p className="text-sm text-slate-600 mt-2 max-w-xl">
-                Explore newly listed villas, penthouses, and turnkey apartments across the Costa Cálida golf circuit.
-              </p>
             </div>
 
-            <Link
-              href="/properties"
-              className="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-[#0b1a2f] hover:text-amber-700 transition-colors"
-            >
-              <span>View All Properties ({PROPERTIES_DATA.length})</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+            {/* Right: View all link & carousel buttons */}
+            <div className="flex items-center gap-4">
+              <Link
+                href={featuredPropertiesSection.viewAllLink}
+                className="text-xs sm:text-sm font-extrabold uppercase tracking-wider text-slate-800 hover:text-[#00D26A] transition-colors flex items-center gap-1.5"
+              >
+                <span>{featuredPropertiesSection.viewAllText}</span>
+                <ArrowRight className="w-4 h-4" />
+              </Link>
+
+              <div className="hidden sm:flex items-center gap-2">
+                <Link
+                  href="/properties"
+                  className="w-9 h-9 rounded-full border border-slate-200 hover:border-slate-400 bg-white flex items-center justify-center text-slate-700 transition-colors shadow-sm"
+                  aria-label="Previous Properties"
+                >
+                  <ChevronLeft className="w-4 h-4" />
+                </Link>
+                <Link
+                  href="/properties"
+                  className="w-9 h-9 rounded-full border border-slate-200 hover:border-slate-400 bg-white flex items-center justify-center text-slate-700 transition-colors shadow-sm"
+                  aria-label="Next Properties"
+                >
+                  <ChevronRight className="w-4 h-4" />
+                </Link>
+              </div>
+            </div>
           </div>
 
-          {/* Properties Grid */}
+          {/* 3 Top Property Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {featuredProperties.map((property) => (
+            {latestProperties.map((property) => (
               <PropertyCard key={property.id} property={property} />
             ))}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-12 sm:hidden">
             <Link
               href="/properties"
-              className="inline-flex items-center gap-2 bg-[#0b1a2f] hover:bg-[#132742] text-amber-300 font-semibold text-xs uppercase tracking-wider px-8 py-4 rounded-xl shadow-lg transition-all"
+              className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full"
             >
-              <span>Browse All Listings in Murcia</span>
+              <span>View All Properties ({PROPERTIES_DATA.length})</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
         </div>
       </section>
 
-      {/* 3. Resort & Area Showcase */}
-      <section className="py-20 bg-white border-t border-slate-200">
+      {/* 3. Discover Murcia: Sun. Sea. Golf. A Brighter Tomorrow. (Mockup Match) */}
+      <DiscoverMurciaSection />
+
+      {/* 4. How We Help: Your Property In Expert Hands (Mockup Match) */}
+      <HowWeHelpSection />
+
+      {/* 5. Golf Resorts & Area Guides Showcase */}
+      <section className="py-20 sm:py-24 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
-              Discover Costa Cálida
+            <span className="text-xs font-black tracking-[0.25em] text-[#00D26A] uppercase block mb-2">
+              DISCOVER COSTA CÁLIDA
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-slate-900 mt-2 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-black text-slate-950 uppercase tracking-tight">
               Explore Murcia’s World-Class Golf Resorts
             </h2>
-            <p className="text-sm text-slate-600 leading-relaxed">
+            <p className="text-sm text-slate-600 leading-relaxed mt-3">
               From the crystal blue lagoon at Santa Rosalía to the manicured fairways of La Torre and El Valle,
               explore each resort community, amenities, and lifestyle before choosing your home.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {featuredResorts.map((resort) => (
               <ResortCard key={resort.id} resort={resort} />
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-12">
             <Link
               href="/resorts"
-              className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-amber-800 hover:text-amber-900"
+              className="inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-wider text-slate-800 hover:text-[#00D26A] transition-colors"
             >
               <span>View All Murcia Resort & Area Guides →</span>
             </Link>
@@ -97,27 +121,21 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 4. Why Choose Us (AIPP & Licensed Real Estate Agent) */}
-      <WhyChooseUs />
-
-      {/* 5. Services & Referrals */}
-      <ServicesSection />
-
-      {/* 6. Testimonials */}
+      {/* 6. Testimonials & Client Reviews */}
       <TestimonialsSection />
 
-      {/* 7. Seller CTA: List Your Property */}
-      <section className="py-16 bg-[#0b1a2f] text-white relative overflow-hidden">
+      {/* 7. Seller CTA Banner */}
+      <section className="py-16 bg-[#080C14] text-white relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="bg-gradient-to-r from-[#11243d] to-[#162e4e] rounded-2xl p-8 sm:p-12 border border-amber-500/20 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+          <div className="bg-[#101725] rounded-3xl p-8 sm:p-12 border border-slate-700/60 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
             <div className="max-w-2xl space-y-3">
-              <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-300">
+              <span className="text-xs font-black tracking-[0.25em] text-[#00D26A] uppercase">
                 Are You Thinking of Selling?
               </span>
-              <h2 className="font-serif text-2xl sm:text-4xl font-bold text-white">
-                List Your Property For Sale With Ultimate Murcia
+              <h2 className="text-2xl sm:text-4xl font-black text-white uppercase tracking-tight">
+                List Your Property With Ultimate Murcia
               </h2>
-              <p className="text-sm text-slate-300 leading-relaxed font-light">
+              <p className="text-sm text-slate-300 leading-relaxed font-normal">
                 We market directly to qualified buyers across the UK, Ireland, Netherlands, Belgium, and Scandinavia.
                 Free valuation, high-definition photography, and professional legal guidance throughout the sale.
               </p>
@@ -126,7 +144,7 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4 shrink-0 w-full sm:w-auto">
               <Link
                 href="/contact?intent=list-property"
-                className="bg-amber-400 hover:bg-amber-300 text-[#0b1a2f] font-semibold text-xs uppercase tracking-wider px-7 py-3.5 rounded-lg text-center transition-all shadow-md"
+                className="bg-[#00D26A] hover:bg-[#00B85C] text-slate-950 font-black text-xs uppercase tracking-wider px-7 py-3.5 rounded-full text-center transition-all shadow-md shadow-[#00D26A]/20"
               >
                 Request Free Valuation
               </Link>
@@ -134,7 +152,7 @@ export default function HomePage() {
                 href="https://wa.me/34617633040?text=Hello%20Ultimate%20Murcia%2C%20I%20would%20like%20to%20discuss%20listing%20my%20property%20for%20sale"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="bg-emerald-600 hover:bg-emerald-500 text-white font-semibold text-xs uppercase tracking-wider px-7 py-3.5 rounded-lg text-center transition-all flex items-center justify-center gap-2"
+                className="bg-slate-800 hover:bg-slate-700 text-white font-bold text-xs uppercase tracking-wider px-7 py-3.5 rounded-full text-center transition-all flex items-center justify-center gap-2"
               >
                 <span>WhatsApp Christine</span>
               </a>

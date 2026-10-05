@@ -1,9 +1,8 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import { Bed, Bath, Maximize2, MapPin, MessageSquare, ArrowUpRight } from 'lucide-react';
+import { Bed, Bath, Maximize2, MapPin, ArrowRight, Heart } from 'lucide-react';
 import { Property } from '@/types/property';
 
 interface PropertyCardProps {
@@ -11,19 +10,17 @@ interface PropertyCardProps {
 }
 
 export default function PropertyCard({ property }: PropertyCardProps) {
+  const [isFavorited, setIsFavorited] = useState(false);
+
   const formattedPrice = new Intl.NumberFormat('de-DE', {
     style: 'currency',
     currency: 'EUR',
     maximumFractionDigits: 0,
   }).format(property.price);
 
-  const whatsappMessage = encodeURIComponent(
-    `Hello, I would like to inquire about "${property.title}" (Ref: ${property.referenceNumber}) listed at ${formattedPrice}. Could you share more details or arrange a viewing?`
-  );
-
   return (
-    <div className="group bg-white rounded-xl overflow-hidden border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col">
-      {/* Image Container with Badges */}
+    <div className="group bg-white rounded-2xl overflow-hidden border border-slate-200/90 shadow-sm hover:shadow-xl hover:border-slate-300 transition-all duration-300 flex flex-col">
+      {/* Top Image with Badges */}
       <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
         <img
           src={property.images[0] || 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80'}
@@ -32,97 +29,70 @@ export default function PropertyCard({ property }: PropertyCardProps) {
           loading="lazy"
         />
 
-        {/* Top Badges */}
-        <div className="absolute top-3 left-3 flex flex-wrap gap-1.5 z-10">
-          {property.status === 'newly_listed' && (
-            <span className="bg-amber-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
-              Newly Listed
-            </span>
-          )}
-          {property.status === 'under_offer' && (
-            <span className="bg-orange-600 text-white text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded shadow-sm">
-              Under Offer
-            </span>
-          )}
-          {property.hasPrivatePool && (
-            <span className="bg-[#0b1a2f]/90 text-amber-300 text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded backdrop-blur-sm shadow-sm">
-              Private Pool
-            </span>
-          )}
+        {/* Top-Left: Neon Green FOR SALE Badge */}
+        <div className="absolute top-3.5 left-3.5 z-10">
+          <span className="bg-[#00D26A] text-slate-950 font-black text-[11px] uppercase tracking-wider px-3.5 py-1.5 rounded-full shadow-md">
+            FOR SALE
+          </span>
         </div>
 
-        {/* Reference Number */}
-        <div className="absolute top-3 right-3 bg-black/60 backdrop-blur-sm text-white text-[10px] font-mono px-2 py-0.5 rounded">
-          {property.referenceNumber}
-        </div>
-
-        {/* Property Type Badge */}
-        <div className="absolute bottom-3 left-3 bg-white/90 backdrop-blur-sm text-slate-800 text-[11px] font-semibold uppercase tracking-wider px-2.5 py-0.5 rounded shadow-sm">
-          {property.type}
-        </div>
+        {/* Top-Right: Heart/Favorite Button */}
+        <button
+          type="button"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsFavorited(!isFavorited);
+          }}
+          className="absolute top-3.5 right-3.5 w-8 h-8 rounded-full bg-black/40 backdrop-blur-md flex items-center justify-center text-white hover:scale-110 transition-transform z-10"
+          aria-label="Save Property"
+        >
+          <Heart
+            className={`w-4 h-4 ${
+              isFavorited ? 'fill-rose-500 text-rose-500' : 'text-white'
+            }`}
+          />
+        </button>
       </div>
 
-      {/* Content Details */}
+      {/* Card Content (Clean Modern Minimalist) */}
       <div className="p-5 flex-1 flex flex-col justify-between">
         <div>
-          {/* Price */}
-          <div className="flex items-baseline justify-between mb-2">
-            <span className="font-serif text-2xl font-bold text-[#0b1a2f]">
+          {/* Price Row with Circular Arrow Button */}
+          <div className="flex items-center justify-between mb-1.5">
+            <span className="text-2xl font-black tracking-tight text-slate-950">
               {formattedPrice}
             </span>
-            <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">
-              Costa Cálida
-            </span>
+
+            <Link
+              href={`/properties/${property.id}`}
+              className="w-9 h-9 rounded-full border border-slate-200 bg-slate-50 hover:bg-[#00D26A] hover:border-[#00D26A] text-slate-800 hover:text-slate-950 flex items-center justify-center transition-all shadow-sm group-hover:bg-[#00D26A] group-hover:border-[#00D26A]"
+              aria-label={`View ${property.title}`}
+            >
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
 
-          {/* Location & Title */}
-          <div className="flex items-center gap-1.5 text-xs text-amber-700 font-medium mb-1.5">
-            <MapPin className="w-3.5 h-3.5 shrink-0" />
+          {/* Location Row */}
+          <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mb-3">
+            <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             <span className="truncate">{property.resortName}</span>
           </div>
 
-          <h3 className="font-serif text-base font-semibold text-slate-900 group-hover:text-amber-700 transition-colors line-clamp-1 mb-3">
-            <Link href={`/properties/${property.id}`}>
-              {property.title}
-            </Link>
-          </h3>
-
-          {/* Specs Ribbon */}
-          <div className="grid grid-cols-3 gap-2 py-3 border-y border-slate-100 text-slate-600 text-xs mb-4">
+          {/* Specs Ribbon: Bed | Bath | m² */}
+          <div className="flex items-center gap-5 pt-3 border-t border-slate-100 text-slate-600 text-xs font-semibold">
             <div className="flex items-center gap-1.5">
               <Bed className="w-4 h-4 text-slate-400" />
-              <span><strong>{property.bedrooms}</strong> Beds</span>
+              <span>{property.bedrooms}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Bath className="w-4 h-4 text-slate-400" />
-              <span><strong>{property.bathrooms}</strong> Baths</span>
+              <span>{property.bathrooms}</span>
             </div>
             <div className="flex items-center gap-1.5">
               <Maximize2 className="w-4 h-4 text-slate-400" />
-              <span><strong>{property.buildAreaSqm}</strong> m²</span>
+              <span>{property.buildAreaSqm} m²</span>
             </div>
           </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-2 pt-1">
-          <Link
-            href={`/properties/${property.id}`}
-            className="flex items-center justify-center gap-1.5 bg-[#0b1a2f] hover:bg-[#132742] text-white text-xs font-semibold py-2.5 px-3 rounded-lg transition-colors"
-          >
-            <span>View Details</span>
-            <ArrowUpRight className="w-3.5 h-3.5 text-amber-300" />
-          </Link>
-
-          <a
-            href={`https://wa.me/34617633040?text=${whatsappMessage}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 text-xs font-semibold py-2.5 px-3 rounded-lg transition-colors"
-          >
-            <MessageSquare className="w-3.5 h-3.5 text-emerald-600" />
-            <span>WhatsApp</span>
-          </a>
         </div>
       </div>
     </div>
