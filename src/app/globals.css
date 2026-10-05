@@ -20,6 +20,30 @@
   --color-onyx-dark: var(--color-onyx-dark);
   --color-onyx-card: var(--color-onyx-card);
   --color-onyx-border: var(--color-onyx-border);
+
+  /* Fonts: font-sans (body), font-display (headlines), font-marker (stickers) */
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-barlow), 'Arial Narrow', sans-serif;
+  --font-marker: var(--font-permanent-marker), 'Comic Sans MS', cursive;
+
+  --animate-float: float 6s ease-in-out infinite;
+  --animate-wiggle: wiggle 4s ease-in-out infinite;
+  --animate-fade-up: fade-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-8deg); }
+  50% { transform: rotate(-5deg); }
+}
+
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 html {
@@ -29,14 +53,48 @@ html {
 body {
   background-color: var(--background);
   color: var(--foreground);
-  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
 }
 
-/* Dynamic display heading slant like in mockup */
+/* Big slanted display headline used across the site */
 .display-title {
+  font-family: var(--font-display);
   font-weight: 900;
-  letter-spacing: -0.03em;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  line-height: 0.88;
   text-transform: uppercase;
+}
+
+/* Small green eyebrow label above headings */
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #00D26A;
+}
+
+/* Neon text glow for the green headline words */
+.text-glow {
+  text-shadow: 0 0 40px rgba(0, 210, 106, 0.35);
+}
+
+/* Polaroid photo frame */
+.polaroid {
+  background: #fff;
+  padding: 10px 10px 14px;
+  border-radius: 6px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+}
+
+/* Respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 /* Custom subtle scrollbars */

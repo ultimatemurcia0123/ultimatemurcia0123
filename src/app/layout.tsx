@@ -1,20 +1,32 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, Inter } from 'next/font/google';
+import { Plus_Jakarta_Sans, Barlow_Condensed, Permanent_Marker } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import WhatsAppFloatingButton from '@/components/WhatsAppFloatingButton';
 
+// Body copy
 const jakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
-  variable: '--font-display',
+  variable: '--font-jakarta',
   weight: ['400', '500', '600', '700', '800'],
   display: 'swap',
 });
 
-const inter = Inter({
+// Big punchy italic headlines ("MORE THAN A HOME")
+const barlow = Barlow_Condensed({
   subsets: ['latin'],
-  variable: '--font-sans',
+  variable: '--font-barlow',
+  weight: ['600', '700', '800', '900'],
+  style: ['normal', 'italic'],
+  display: 'swap',
+});
+
+// Hand-written marker stickers ("Life in Murcia")
+const marker = Permanent_Marker({
+  subsets: ['latin'],
+  variable: '--font-permanent-marker',
+  weight: '400',
   display: 'swap',
 });
 
@@ -42,7 +54,7 @@ export const metadata: Metadata = {
     siteName: 'Ultimate Murcia Property Sales',
     images: [
       {
-        url: '/images/design-mockup.jpeg',
+        url: '/images/hero-villa.webp',
         width: 1200,
         height: 630,
         alt: 'Ultimate Murcia Property Sales',
@@ -59,7 +71,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${jakarta.variable} ${inter.variable} scroll-smooth`}>
+    <html
+      lang="en"
+      className={`${jakarta.variable} ${barlow.variable} ${marker.variable} scroll-smooth`}
+    >
       <body className="font-sans min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-[#00D26A] selection:text-slate-950">
         <Navbar />
         <main className="flex-grow">{children}</main>

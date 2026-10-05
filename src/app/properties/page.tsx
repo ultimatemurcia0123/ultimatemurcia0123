@@ -2,11 +2,12 @@
 
 import React, { useState, useMemo, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import { Search, SlidersHorizontal, RotateCcw, Bed, Euro, Home, MapPin, Check } from 'lucide-react';
+import { Search, SlidersHorizontal, RotateCcw, BedDouble, Euro, Home, MapPin } from 'lucide-react';
 import PropertyCard from '@/components/PropertyCard';
 import { PROPERTIES_DATA } from '@/data/properties';
 import { RESORTS_DATA } from '@/data/resorts';
-import { PropertyType } from '@/types/property';
+import PageHero from '@/components/PageHero';
+import { IMAGES } from '@/data/images';
 
 function PropertiesContent() {
   const searchParams = useSearchParams();
@@ -98,56 +99,53 @@ function PropertiesContent() {
   };
 
   return (
-    <div className="bg-[#faf8f5] min-h-screen py-12">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="mb-10">
-          <span className="text-xs font-semibold uppercase tracking-[0.2em] text-amber-700">
-            Costa Cálida Real Estate
-          </span>
-          <h1 className="font-serif text-3xl sm:text-5xl font-bold text-slate-900 mt-2">
-            Properties For Sale in Murcia
-          </h1>
-          <p className="text-sm text-slate-600 mt-2 max-w-2xl">
-            Browse our hand-picked selection of golf resort villas, lake residences, and holiday apartments.
-            Contact us directly on WhatsApp for full floor plans, videos, and private viewings.
-          </p>
-        </div>
+    <div className="bg-[#F8FAFC] min-h-screen">
+      {/* 1. Page Hero */}
+      <PageHero
+        eyebrow="COSTA CÁLIDA & GOLF SPECIALISTS"
+        title="MURCIA PROPERTIES"
+        highlight="FOR SALE."
+        description="Browse our hand-picked selection of golf resort villas, lagoon residences, and coastal apartments. Contact Christine directly on WhatsApp for full floor plans, videos, and private viewings."
+        image={IMAGES.properties.p3}
+        mascot="point"
+        sticker={['Handpicked', 'Villas & more']}
+      />
 
-        {/* Filter Bar & Controls */}
-        <div className="bg-white rounded-2xl shadow-sm border border-slate-200/90 p-5 mb-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        {/* Filter Bar & Controls (Modern Brand Card) */}
+        <div className="bg-[#080C14] text-white rounded-3xl shadow-2xl border border-slate-800 p-6 sm:p-8 mb-12">
           {/* Top Row: Search & Dropdowns */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             {/* Search Input */}
             <div className="relative">
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                 Keyword / Reference
               </label>
               <div className="relative">
                 <input
                   type="text"
-                  placeholder="e.g. Sierra Golf, UM-101, Pool..."
+                  placeholder="e.g. Roda Golf, UM-RG, Pool..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 pl-9 pr-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                  className="w-full bg-[#121B2F] border border-slate-700/80 rounded-2xl py-3 pl-10 pr-4 text-xs font-semibold text-white placeholder-slate-500 focus:outline-none focus:ring-2 focus:ring-[#00D26A]"
                 />
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-3" />
+                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-3.5" />
               </div>
             </div>
 
             {/* Resort Selection */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                 Resort / Area
               </label>
               <select
                 value={selectedResort}
                 onChange={(e) => setSelectedResort(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 px-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium"
+                className="w-full bg-[#121B2F] border border-slate-700/80 rounded-2xl py-3 px-4 text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-[#00D26A] cursor-pointer"
               >
-                <option value="">All Murcia Resorts</option>
+                <option value="" className="bg-[#121B2F]">All Murcia Resorts</option>
                 {RESORTS_DATA.map((r) => (
-                  <option key={r.id} value={r.id}>
+                  <option key={r.id} value={r.id} className="bg-[#121B2F]">
                     {r.name}
                   </option>
                 ))}
@@ -156,114 +154,120 @@ function PropertiesContent() {
 
             {/* Property Type */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                 Property Type
               </label>
               <select
                 value={selectedType}
                 onChange={(e) => setSelectedType(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 px-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium"
+                className="w-full bg-[#121B2F] border border-slate-700/80 rounded-2xl py-3 px-4 text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-[#00D26A] cursor-pointer"
               >
-                <option value="">All Property Types</option>
-                <option value="villa">Detached Villa</option>
-                <option value="apartment">Apartment</option>
-                <option value="penthouse">Penthouse / Solarium</option>
-                <option value="townhouse">Townhouse</option>
+                <option value="" className="bg-[#121B2F]">All Property Types</option>
+                <option value="villa" className="bg-[#121B2F]">Detached Villa</option>
+                <option value="apartment" className="bg-[#121B2F]">Apartment</option>
+                <option value="penthouse" className="bg-[#121B2F]">Penthouse / Solarium</option>
+                <option value="townhouse" className="bg-[#121B2F]">Townhouse</option>
               </select>
             </div>
 
             {/* Bedrooms */}
             <div>
-              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-500 mb-1">
+              <label className="block text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-1.5">
                 Min Bedrooms
               </label>
               <select
                 value={selectedBedrooms}
                 onChange={(e) => setSelectedBedrooms(e.target.value)}
-                className="w-full bg-slate-50 border border-slate-300 rounded-lg py-2 px-3 text-sm text-slate-800 focus:outline-none focus:ring-2 focus:ring-amber-500 font-medium"
+                className="w-full bg-[#121B2F] border border-slate-700/80 rounded-2xl py-3 px-4 text-xs font-semibold text-white focus:outline-none focus:ring-2 focus:ring-[#00D26A] cursor-pointer"
               >
-                <option value="">Any Bedrooms</option>
-                <option value="2">2+ Bedrooms</option>
-                <option value="3">3+ Bedrooms</option>
-                <option value="4">4+ Bedrooms</option>
+                <option value="" className="bg-[#121B2F]">Any Bedrooms</option>
+                <option value="2" className="bg-[#121B2F]">2+ Bedrooms</option>
+                <option value="3" className="bg-[#121B2F]">3+ Bedrooms</option>
+                <option value="4" className="bg-[#121B2F]">4+ Bedrooms</option>
               </select>
             </div>
           </div>
 
           {/* Bottom Row: Price Slider & Checkbox Toggles */}
-          <div className="pt-4 border-t border-slate-100 flex flex-col lg:flex-row lg:items-center justify-between gap-5">
+          <div className="pt-5 border-t border-slate-800 flex flex-col lg:flex-row lg:items-center justify-between gap-6">
             {/* Price Slider */}
             <div className="flex-1 max-w-md">
-              <div className="flex justify-between items-center text-xs mb-1.5">
-                <span className="font-semibold text-slate-700">Max Budget:</span>
-                <span className="font-serif font-bold text-base text-[#0b1a2f]">
+              <div className="flex justify-between items-center text-xs mb-2">
+                <span className="font-semibold text-slate-300">Max Budget:</span>
+                <span className="font-black text-sm text-[#00D26A]">
                   €{maxPrice.toLocaleString()}
                 </span>
               </div>
               <input
                 type="range"
                 min="100000"
-                max="600000"
+                max="800000"
                 step="25000"
                 value={maxPrice}
                 onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-[#0b1a2f]"
+                className="w-full accent-[#00D26A] bg-slate-700 h-2 rounded-lg cursor-pointer"
               />
             </div>
 
-            {/* Feature Checkboxes */}
-            <div className="flex flex-wrap items-center gap-4 text-xs">
-              <label className="flex items-center gap-2 cursor-pointer select-none">
+            {/* Feature Toggles */}
+            <div className="flex flex-wrap items-center gap-4">
+              <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-300 select-none">
                 <input
                   type="checkbox"
                   checked={hasPoolOnly}
                   onChange={(e) => setHasPoolOnly(e.target.checked)}
-                  className="rounded border-slate-300 text-amber-600 focus:ring-amber-500 w-4 h-4"
+                  className="rounded border-slate-700 bg-slate-800 text-[#00D26A] focus:ring-[#00D26A] w-4 h-4 accent-[#00D26A]"
                 />
-                <span className="text-slate-700 font-medium">Must Have Pool</span>
+                <span>Must Have Pool</span>
               </label>
 
-              <label className="flex items-center gap-2 cursor-pointer select-none">
+              <label className="flex items-center gap-2 cursor-pointer text-xs font-semibold text-slate-300 select-none">
                 <input
                   type="checkbox"
                   checked={golfViewOnly}
                   onChange={(e) => setGolfViewOnly(e.target.checked)}
-                  className="rounded border-slate-300 text-amber-600 focus:ring-amber-500 w-4 h-4"
+                  className="rounded border-slate-700 bg-slate-800 text-[#00D26A] focus:ring-[#00D26A] w-4 h-4 accent-[#00D26A]"
                 />
-                <span className="text-slate-700 font-medium">Golf Course Views</span>
+                <span>Golf Course Views</span>
               </label>
-            </div>
-
-            {/* Reset Filters & Sorting */}
-            <div className="flex items-center gap-3">
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value as any)}
-                className="bg-slate-50 border border-slate-300 rounded-lg py-1.5 px-2.5 text-xs text-slate-800 font-medium focus:outline-none"
-              >
-                <option value="newest">Sort: Newest First</option>
-                <option value="price-asc">Price: Low to High</option>
-                <option value="price-desc">Price: High to Low</option>
-                <option value="beds-desc">Most Bedrooms</option>
-              </select>
 
               <button
+                type="button"
                 onClick={resetFilters}
-                className="flex items-center gap-1 text-xs text-slate-500 hover:text-slate-800 py-1.5 px-2 rounded hover:bg-slate-100 transition-colors"
-                title="Reset all filters"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-400 hover:text-white transition-colors ml-auto sm:ml-0"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span>Reset</span>
+                <span>Reset Filters</span>
               </button>
             </div>
           </div>
         </div>
 
-        {/* Results Count Bar */}
-        <div className="flex justify-between items-center mb-6 text-xs text-slate-500">
+        {/* Results Header: Count & Sorting */}
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
           <div>
-            Showing <strong className="text-slate-900">{filteredProperties.length}</strong> of{' '}
-            {PROPERTIES_DATA.length} properties
+            <h2 className="display-title text-2xl sm:text-3xl font-black text-slate-950 uppercase">
+              {filteredProperties.length} Properties Available
+            </h2>
+            <p className="text-xs text-slate-500 font-medium">
+              Showing matching real estate in Murcia and Costa Cálida
+            </p>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <span className="text-xs font-bold uppercase tracking-wider text-slate-500">
+              Sort By:
+            </span>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as any)}
+              className="bg-white border border-slate-200 rounded-xl px-3 py-2 text-xs font-bold text-slate-900 focus:outline-none focus:ring-2 focus:ring-[#00D26A] cursor-pointer shadow-sm"
+            >
+              <option value="newest">Recently Listed</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="beds-desc">Most Bedrooms</option>
+            </select>
           </div>
         </div>
 
@@ -275,19 +279,19 @@ function PropertiesContent() {
             ))}
           </div>
         ) : (
-          <div className="bg-white rounded-2xl border border-slate-200 p-12 text-center max-w-lg mx-auto">
-            <Home className="w-12 h-12 text-slate-300 mx-auto mb-4" />
-            <h3 className="font-serif text-lg font-bold text-slate-800 mb-2">
-              No Properties Match Your Search
+          <div className="bg-white rounded-3xl p-12 text-center border border-slate-200 shadow-sm max-w-xl mx-auto my-12">
+            <SlidersHorizontal className="w-12 h-12 text-slate-400 mx-auto mb-4" />
+            <h3 className="display-title text-2xl font-bold text-slate-950 mb-2">
+              No Matching Properties Found
             </h3>
-            <p className="text-xs text-slate-500 mb-6">
-              Try adjusting your price range or clearing filters to see more available villas and apartments.
+            <p className="text-xs text-slate-500 leading-relaxed mb-6 font-normal">
+              Try broadening your budget or resetting some filters. You can also message Christine directly on WhatsApp to see off-market and upcoming listings.
             </p>
             <button
               onClick={resetFilters}
-              className="bg-[#0b1a2f] text-amber-300 text-xs font-semibold py-2.5 px-5 rounded-lg hover:bg-[#132742] transition-colors"
+              className="bg-[#00D26A] hover:bg-[#00B85C] text-slate-950 font-bold text-xs uppercase tracking-wider px-6 py-3 rounded-full transition-all"
             >
-              Clear All Filters
+              Reset All Filters
             </button>
           </div>
         )}
@@ -298,7 +302,7 @@ function PropertiesContent() {
 
 export default function PropertiesPage() {
   return (
-    <Suspense fallback={<div className="p-12 text-center text-sm text-slate-500">Loading Murcia properties...</div>}>
+    <Suspense fallback={<div className="p-12 text-center text-sm text-slate-500">Loading properties...</div>}>
       <PropertiesContent />
     </Suspense>
   );

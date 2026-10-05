@@ -19,6 +19,7 @@ export interface SiteContent {
     primaryCtaLink: string;
     secondaryCtaText: string;
     secondaryCtaLink: string;
+    videoUrl?: string;
     tabs: string[];
     valuePillars: {
       title: string;
@@ -74,13 +75,14 @@ export const SITE_CONTENT: SiteContent = {
     headlinePart1: 'MORE THAN',
     headlinePart2: 'A HOME',
     stickerLife: 'LIFE IN MURCIA',
-    stickerSunSeaGolf: 'SUN • GOLF • SEA — A BRIGHTER TOMORROW',
+    stickerSunSeaGolf: 'SUN|GOLF|SEA|A BRIGHTER|TOMORROW',
     description:
       'Exceptional properties. A brighter lifestyle. We help you buy or sell in Murcia and Costa Cálida.',
     primaryCtaText: 'Browse properties',
     primaryCtaLink: '/properties',
     secondaryCtaText: 'Watch video',
     secondaryCtaLink: '#discover',
+    videoUrl: 'https://www.youtube-nocookie.com/embed/S_dfq9rFWAE?autoplay=1',
     tabs: ['Buy', 'Rent', 'New Builds'],
     valuePillars: [
       {
@@ -122,12 +124,12 @@ export const SITE_CONTENT: SiteContent = {
     polaroids: [
       {
         label: 'STUNNING COASTLINE',
-        image: 'https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=800&q=80',
+        image: '/images/discover-coast.webp',
         tilt: 'left',
       },
       {
         label: 'WORLD CLASS GOLF',
-        image: 'https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=800&q=80',
+        image: '/images/discover-golf.webp',
         tilt: 'right',
       },
     ],
