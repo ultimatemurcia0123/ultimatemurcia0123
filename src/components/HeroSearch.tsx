@@ -101,7 +101,7 @@ export default function HeroSearch() {
           <svg viewBox="0 0 140 18" aria-hidden="true"><path d="M2 14 137 1 130 8 9 18Z" fill="#00f34a" /></svg>
         </div>
         <div className="home-sun-sticker reference-handwriting" aria-label="Sun. Golf. Sea. A brighter tomorrow.">
-          <svg className="sticker-rays" viewBox="0 0 130 200" aria-hidden="true" fill="none" stroke="#00f34a" strokeWidth="4" strokeLinecap="round"><path d="M18 5Q3 18 1 39M10 3 3 14M104 22 120 9M111 42 129 39M108 57 121 66M8 92 0 84M5 111 0 115M16 127 4 140" /></svg>
+          <svg className="sticker-rays" viewBox="0 0 160 180" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#00f34a" strokeWidth="3" strokeLinecap="round"><path d="M22 4Q9 15 7 35M13 3 5 15M137 16 151 3M142 34 158 28M142 49 155 55M15 79 3 73M14 96 1 99M18 112 8 123" /></svg>
           <span>SUN</span><span>GOLF</span><span>SEA</span><span>A BRIGHTER</span><span>TOMORROW</span>
           <svg className="sticker-underline" viewBox="0 0 140 18" aria-hidden="true"><path d="M2 14 137 1 130 8 9 18Z" fill="#00f34a" /></svg>
         </div>

@@ -259,3 +259,8 @@ body {
   .home-sun-sticker { top: 83px; right: 255px; width: 104px; font-size: 27px; line-height: 29px; }
   .home-sun-sticker > span:nth-of-type(n+4) { font-size: 20px; line-height: 24px; }
 }
+
+/* Position the decorative strokes outside the live lettering. */
+.home-sun-sticker { transform: rotate(-4deg); }
+.home-sun-sticker .sticker-rays { width: calc(100% + 58px); height: 100%; left: -29px; top: -10px; }
+.home-sun-sticker .sticker-underline { width: 110%; margin-left: -5%; height: 10px; margin-top: 8px; }
