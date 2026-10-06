@@ -57,3 +57,13 @@ Sun prompt: Recreate only the upper-right annotation, exact five lines SUN / GOL
 Life prompt: Using the website reference and the generated sun asset as style references, create exactly LIFE / IN / MURCIA in matching white uppercase brush lettering, IN smaller centered, with a green dry-brush underline. Genuine transparency; no rays, scenery, mascot, glow or background.
 
 Both assets include their own slant and marks; no extra CSS rotation is applied. The sun asset is positioned relative to the wide desktop mascot’s fixed size, with its underline just above the pointing fingertip. Alpha compositing was checked on a dark background: the tool preview’s apparent haze is absent in the rendered assets.
+
+## Discover Murcia high-resolution artwork
+
+Built-in imagegen, using the supplied website JPEG as reference; golf also used the new coast artwork to match its treatment.
+
+- `public/images/discover-coast-collage-v2.webp` — 1536×1024 transparent collage. Prompt: detailed Mediterranean turquoise cove, thin rounded white tilted photo frame with tactile paper depth, rough white label reading STUNNING / COASTLINE, green diagonal dry-brush splash behind. Entire collage and paint tips inside canvas; transparent surroundings, no environment or UI.
+- `public/images/discover-golf-collage-v2.webp` — 1536×1024 transparent collage. Prompt: detailed Mediterranean putting green, bunker, palms, villas and mountains; matching tilted white frame, rough white WORLD CLASS / GOLF label and green diagonal splashes. Complete paint edges, transparent surroundings, no environment or UI.
+- `public/images/discover-environment-v2.webp` — 2172×724 backdrop. Prompt: wide near-black Mediterranean tropical garden at dusk, detailed palms at edges, cream villa canopy at far right, quiet dark center; no paint, photo frames, labels, text, mascot or UI.
+
+Replaced the 200–250px reference crops and removed their CSS edge masks. Foreground paint now scales with each complete collage instead of being cropped by the background's cover sizing.
