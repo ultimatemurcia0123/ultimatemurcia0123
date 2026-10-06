@@ -87,9 +87,14 @@ export default function HeroSearch() {
   return (
     <section className="home-hero relative text-white overflow-hidden">
       <div className="home-hero-stage">
-        {/* The mascot and foreground foliage are composed into one continuous scene. */}
+        <picture>
+          <source media="(min-width: 1100px)" srcSet="/images/hero-reference-v2.webp" />
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={IMAGES.hero.garden} alt="Mediterranean villa, pool and tropical garden overlooking the coast" className="home-hero-scene" width={1774} height={887} fetchPriority="high" />
+        </picture>
+        {/* Wide layouts position the character independently of the scenery. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={IMAGES.hero.garden} alt="Sunny pointing across a Mediterranean villa and pool, surrounded by flowering tropical plants" className="home-hero-scene" width={1774} height={887} fetchPriority="high" />
+        <img src="/images/mascot/mascot-point-v2.webp" alt="Sunny pointing toward a brighter tomorrow" className="home-hero-mascot" width={1108} height={1421} />
         <div className="home-hero-shade" />
         <div className="home-life-sticker reference-handwriting" aria-label="Life in Murcia">
           <span>LIFE</span><span>IN</span><span>MURCIA</span>

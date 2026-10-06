@@ -43,3 +43,5 @@ The homepage now follows the four sections shown in the supplied mockup. Resort 
 - Compared using Chromium CLI screenshots, without Playwright. Original low-resolution cutouts and newly generated architecture mean the result is a close reconstruction rather than a pixel-identical export.
 
 Wide desktop correction after reviewing `howitlooks1.png`: capped the hero composition at 1120px, headline at 108px, and stage at 440px above 1100px viewport width. Preserved the scene’s 2:1 aspect ratio and moved the annotation toward the pointing hand. Checked at 1536×864 with Chromium CLI; the previous 1024px check missed the wide-screen scaling issue.
+
+Superseded the boxed wide-screen treatment after reviewing `howitlooks2.png`. Wide screens now use full-bleed `hero-reference-v2.webp` scenery and an independently positioned `mascot-point-v2.webp`, with live HTML typography, search and CTAs. Smaller layouts retain the garden composition. Desktop verified at 1536×864; TypeScript passes.

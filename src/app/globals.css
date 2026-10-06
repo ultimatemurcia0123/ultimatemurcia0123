@@ -244,16 +244,18 @@ body {
   .home-properties h2 { transform: scaleX(1.15); transform-origin: left; }
 }
 
-/* Keep the reference composition together on wide monitors. */
+/* Full-bleed scenery; typography and controls size independently. */
+.home-hero-mascot { display: none; }
 @media (min-width: 1100px) {
-  .home-hero-stage { max-width: 1120px; height: 440px; margin-inline: auto; }
-  .home-hero-scene { height: 560px; min-height: 0; object-fit: cover; object-position: center top; mask-image: linear-gradient(90deg, transparent, #000 1%, #000 99%, transparent); }
-  .home-hero-shade { height: 570px; background: linear-gradient(0deg, #030303, transparent 25%), linear-gradient(90deg, transparent, rgb(0 0 0 / 22%) 48%, transparent 80%); }
-  .home-hero-copy { padding-top: 28px; }
+  .home-hero-stage { width: 100%; height: 460px; }
+  .home-hero-scene { width: 100%; height: 600px; min-height: 0; object-fit: cover; object-position: center 72%; }
+  .home-hero-shade { height: 610px; background: linear-gradient(0deg, #030303, transparent 28%), linear-gradient(90deg, transparent, rgb(0 0 0 / 25%) 48%, transparent 80%); }
+  .home-hero-mascot { display: block; position: absolute; z-index: 1; right: -18px; top: 24px; width: 315px; height: auto; mask-image: linear-gradient(#000 90%, transparent 100%); }
+  .home-hero-copy { max-width: 760px; padding-top: 32px; }
   .home-hero-copy h1 { font-size: 108px; }
   .home-hero-copy p { font-size: 15px; }
-  .home-hero-tools { max-width: 1280px !important; margin-top: -20px; }
+  .home-hero-tools { margin-top: -20px; }
   .home-life-sticker { top: 38px; left: 3%; width: 110px; font-size: 30px; }
-  .home-sun-sticker { top: 72px; right: 18%; width: 104px; font-size: 27px; line-height: 29px; }
+  .home-sun-sticker { top: 83px; right: 255px; width: 104px; font-size: 27px; line-height: 29px; }
   .home-sun-sticker > span:nth-of-type(n+4) { font-size: 20px; line-height: 24px; }
 }
