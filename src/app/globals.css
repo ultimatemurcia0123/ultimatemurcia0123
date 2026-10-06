@@ -264,3 +264,13 @@ body {
 .home-sun-sticker { transform: rotate(-4deg); }
 .home-sun-sticker .sticker-rays { width: calc(100% + 58px); height: 100%; left: -29px; top: -10px; }
 .home-sun-sticker .sticker-underline { width: 110%; margin-left: -5%; height: 10px; margin-top: 8px; }
+
+/* The generated lettering already contains the reference slant and flourishes. */
+.hero-lettering { position: absolute; z-index: 2; height: auto; pointer-events: none; }
+.hero-lettering-life { top: 24px; left: 2.4%; width: 120px; }
+.hero-lettering-sun { top: 0; right: 14.5%; width: 140px; }
+@media (min-width: 1100px) {
+  .hero-lettering-life { top: 22px; left: 2.5%; width: 135px; }
+  .hero-lettering-sun { top: 27px; right: 234px; width: 150px; }
+}
+@media (max-width: 767px) { .hero-lettering { display: none; } }

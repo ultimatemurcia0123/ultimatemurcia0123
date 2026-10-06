@@ -45,3 +45,15 @@ The homepage now follows the four sections shown in the supplied mockup. Resort 
 Wide desktop correction after reviewing `howitlooks1.png`: capped the hero composition at 1120px, headline at 108px, and stage at 440px above 1100px viewport width. Preserved the scene’s 2:1 aspect ratio and moved the annotation toward the pointing hand. Checked at 1536×864 with Chromium CLI; the previous 1024px check missed the wide-screen scaling issue.
 
 Superseded the boxed wide-screen treatment after reviewing `howitlooks2.png`. Wide screens now use full-bleed `hero-reference-v2.webp` scenery and an independently positioned `mascot-point-v2.webp`, with live HTML typography, search and CTAs. Smaller layouts retain the garden composition. Desktop verified at 1536×864; TypeScript passes.
+
+## Matching generated annotations
+
+Built-in imagegen was used with the supplied `website reference of how it should look.jpeg`. Final transparent outputs are preserved as lossless WebP:
+- `public/images/sun-golf-brush-v3.webp`
+- `public/images/life-murcia-brush-v3.webp`
+
+Sun prompt: Recreate only the upper-right annotation, exact five lines SUN / GOLF / SEA / A BRIGHTER / TOMORROW, narrow white uppercase brush lettering, modest rising-right slant, green curved strokes upper left, three rays upper right and middle left, two underlines. Genuine transparency; no scenery, mascot, glow, shadows or background.
+
+Life prompt: Using the website reference and the generated sun asset as style references, create exactly LIFE / IN / MURCIA in matching white uppercase brush lettering, IN smaller centered, with a green dry-brush underline. Genuine transparency; no rays, scenery, mascot, glow or background.
+
+Both assets include their own slant and marks; no extra CSS rotation is applied. The sun asset is positioned relative to the wide desktop mascot’s fixed size, with its underline just above the pointing fingertip. Alpha compositing was checked on a dark background: the tool preview’s apparent haze is absent in the rendered assets.

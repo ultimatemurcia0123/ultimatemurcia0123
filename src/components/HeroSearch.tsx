@@ -96,15 +96,11 @@ export default function HeroSearch() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src="/images/mascot/mascot-point-v2.webp" alt="Sunny pointing toward a brighter tomorrow" className="home-hero-mascot" width={1108} height={1421} />
         <div className="home-hero-shade" />
-        <div className="home-life-sticker reference-handwriting" aria-label="Life in Murcia">
-          <span>LIFE</span><span>IN</span><span>MURCIA</span>
-          <svg viewBox="0 0 140 18" aria-hidden="true"><path d="M2 14 137 1 130 8 9 18Z" fill="#00f34a" /></svg>
-        </div>
-        <div className="home-sun-sticker reference-handwriting" aria-label="Sun. Golf. Sea. A brighter tomorrow.">
-          <svg className="sticker-rays" viewBox="0 0 160 180" preserveAspectRatio="none" aria-hidden="true" fill="none" stroke="#00f34a" strokeWidth="3" strokeLinecap="round"><path d="M22 4Q9 15 7 35M13 3 5 15M137 16 151 3M142 34 158 28M142 49 155 55M15 79 3 73M14 96 1 99M18 112 8 123" /></svg>
-          <span>SUN</span><span>GOLF</span><span>SEA</span><span>A BRIGHTER</span><span>TOMORROW</span>
-          <svg className="sticker-underline" viewBox="0 0 140 18" aria-hidden="true"><path d="M2 14 137 1 130 8 9 18Z" fill="#00f34a" /></svg>
-        </div>
+        {/* Generated reference lettering includes its own brush accents and slant. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="hero-lettering hero-lettering-life" src="/images/life-murcia-brush-v3.webp" alt="Life in Murcia" width={600} height={636} />
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img className="hero-lettering hero-lettering-sun" src="/images/sun-golf-brush-v3.webp" alt="Sun. Golf. Sea. A brighter tomorrow." width={600} height={900} />
         <div className="home-hero-copy">
           <div className="eyebrow">{hero.badgeTop}</div>
           <h1 className="display-title">
