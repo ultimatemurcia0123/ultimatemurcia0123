@@ -65,10 +65,10 @@ export const SITE_CONTENT: SiteContent = {
     name: 'ULTIMATE MURCIA',
     tagline: 'PROPERTY SALES',
     subtagline: 'Costa Cálida & Golf Specialists',
-    phone: '+34 617 633 040',
-    whatsappNumber: '34617633040',
-    email: 'sales@ultimatemurcia.com',
-    location: 'Murcia & Costa Cálida, Spain',
+    phone: '+34 711 093 154',
+    whatsappNumber: '34711093154',
+    email: 'info@ultimatemurcia.com',
+    location: 'La Torre Golf Resort, 30709 Murcia, Spain',
   },
   hero: {
     badgeTop: 'MURCIA & COSTA CÁLIDA',
@@ -109,7 +109,7 @@ export const SITE_CONTENT: SiteContent = {
   },
   featuredPropertiesSection: {
     badge: 'FEATURED PROPERTIES',
-    title: 'OUR LATEST PROPERTIES',
+    title: 'FEATURED PROPERTIES',
     viewAllText: 'View all properties',
     viewAllLink: '/properties',
   },
@@ -118,7 +118,7 @@ export const SITE_CONTENT: SiteContent = {
     titlePart1: 'SUN. SEA. GOLF.',
     titlePart2: 'A BRIGHTER TOMORROW.',
     description:
-      'Over 320 days of sunshine, world-class golf courses, beautiful coastal towns and a relaxed Mediterranean lifestyle. Murcia is a place to live, invest and enjoy.',
+      'Golf courses, coastal towns and a relaxed Mediterranean lifestyle. Explore the places that could become your next home in Murcia.',
     ctaText: 'Explore the lifestyle',
     ctaLink: '/resorts',
     polaroids: [
@@ -138,7 +138,7 @@ export const SITE_CONTENT: SiteContent = {
     badge: 'HOW WE HELP',
     title: 'YOUR PROPERTY IN EXPERT HANDS',
     description:
-      "Whether you're buying, selling or simply exploring your options, our local team provides honest advice, professional marketing and a smooth, stress-free process.",
+      "Whether you’re buying, selling or exploring your options, talk to our local team about your plans and the next step.",
     ctaText: 'Our services',
     ctaLink: '/services',
     cards: [
@@ -149,7 +149,7 @@ export const SITE_CONTENT: SiteContent = {
       },
       {
         title: 'Sell your property',
-        description: 'Reach qualified buyers across Europe.',
+        description: 'Talk through your sale and marketing options.',
         iconType: 'sell',
       },
       {
@@ -159,7 +159,7 @@ export const SITE_CONTENT: SiteContent = {
       },
       {
         title: 'Ongoing support',
-        description: "We're with you from start to finish.",
+        description: 'Introductions to local service providers.',
         iconType: 'support',
       },
     ],

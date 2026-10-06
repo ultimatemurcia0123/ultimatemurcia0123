@@ -10,7 +10,7 @@ export default function DiscoverMurciaSection() {
         <figure className="home-reference-cutout home-reference-coast">
           {/* High-resolution transparent artwork; frame, label and paint stay together. */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/discover-coast-collage-v2.webp" alt="Stunning coastline — a tilted photo of the Mediterranean cove with a rough white brush label" width={1536} height={1024} loading="lazy" />
+          <img src="/images/discover-coast-reference-v3.webp" alt="Stunning coastline — a tilted photo of the Mediterranean cove with a rough white brush label" width={1280} height={1280} loading="lazy" />
         </figure>
         <div className="home-discover-copy">
           <div className="eyebrow mb-3">{discoverMurcia.badge}</div>
@@ -20,7 +20,7 @@ export default function DiscoverMurciaSection() {
         </div>
         <figure className="home-reference-cutout home-reference-golf">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/discover-golf-collage-v2.webp" alt="World class golf — a tilted photo of the green with a rough white brush label" width={1536} height={1024} loading="lazy" />
+          <img src="/images/discover-golf-reference-v3.webp" alt="World class golf — a tilted photo of the green with a rough white brush label" width={1280} height={1280} loading="lazy" />
         </figure>
       </div>
     </section>

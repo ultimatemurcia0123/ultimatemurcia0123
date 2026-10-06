@@ -9,8 +9,6 @@ import {
   BedDouble,
   Euro,
   ArrowRight,
-  Play,
-  Palmtree,
   Gem,
   Sun,
   ShieldCheck,
@@ -20,9 +18,10 @@ import {
 import { RESORTS_DATA } from '@/data/resorts';
 import { SITE_CONTENT } from '@/data/site-content';
 import { IMAGES } from '@/data/images';
+import LocalPalmIcon from '@/components/LocalPalmIcon';
 
 const PILLAR_ICONS = {
-  palm: Palmtree,
+  palm: LocalPalmIcon,
   diamond: Gem,
   sun: Sun,
   shield: ShieldCheck,
@@ -77,6 +76,7 @@ export default function HeroSearch() {
     if (propertyType) params.set('type', propertyType);
     if (bedrooms) params.set('bedrooms', bedrooms);
     if (priceRange) params.set('maxPrice', priceRange);
+    if (activeTab === 'Rent') params.set('kind', 'rental');
     if (activeTab === 'New Builds') params.set('newBuild', 'true');
     router.push(`/properties?${params.toString()}`);
   };
@@ -108,14 +108,10 @@ export default function HeroSearch() {
             <span className="block text-[#00F34A]">{hero.headlinePart2}</span>
           </h1>
           <p>Exceptional properties. A brighter lifestyle.<br />We help you buy or sell in Murcia and Costa Cálida.</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-3.5">
+          <div className="flex justify-center mt-3.5">
             <Link href={hero.primaryCtaLink} className="home-primary-button">
               {hero.primaryCtaText}<ArrowRight className="w-4 h-4" />
             </Link>
-            <button type="button" onClick={() => setVideoOpen(true)} className="home-video-button">
-              <span className="w-7 h-7 rounded-full border border-white flex items-center justify-center"><Play className="w-3 h-3 fill-current ml-0.5" /></span>
-              {hero.secondaryCtaText}
-            </button>
           </div>
         </div>
       </div>
@@ -158,7 +154,8 @@ export default function HeroSearch() {
             </SearchField>
             <SearchField icon={Home} label="Property type" value={propertyType} onChange={setPropertyType}>
               <option value="" className={optionClass}>Any type</option>
-              <option value="villa" className={optionClass}>Detached villa</option>
+              <option value="villa" className={optionClass}>Villa</option>
+              <option value="semi-detached" className={optionClass}>Semi-detached</option>
               <option value="apartment" className={optionClass}>Apartment</option>
               <option value="penthouse" className={optionClass}>Penthouse</option>
               <option value="townhouse" className={optionClass}>Townhouse</option>

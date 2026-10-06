@@ -9,6 +9,9 @@ export default function HowWeHelpSection() {
   return (
     <section className="home-help">
       <div className="home-help-photo" aria-hidden="true" />
+      {/* Independent foliage keeps its leaf tips intact above the section boundary. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img className="home-help-foliage" src="/images/help-foliage-v2.webp" alt="" aria-hidden="true" width={600} height={900} loading="lazy" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="home-help-intro">
           <div>

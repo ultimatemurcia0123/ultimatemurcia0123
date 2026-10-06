@@ -67,3 +67,20 @@ Built-in imagegen, using the supplied website JPEG as reference; golf also used 
 - `public/images/discover-environment-v2.webp` — 2172×724 backdrop. Prompt: wide near-black Mediterranean tropical garden at dusk, detailed palms at edges, cream villa canopy at far right, quiet dark center; no paint, photo frames, labels, text, mascot or UI.
 
 Replaced the 200–250px reference crops and removed their CSS edge masks. Foreground paint now scales with each complete collage instead of being cropped by the background's cover sizing.
+
+## Close-up reference correction
+
+Reference: `discovermurcia example.png`. Built-in imagegen produced three replacement assets:
+- `public/images/discover-coast-reference-v3.webp`: recreate only left near-square coastline card, thin tilted white frame, small ragged white STUNNING / COASTLINE label below the lower-right edge, one narrow jagged green stroke emerging upper-left; transparent surroundings, no lower splash or dots.
+- `public/images/discover-golf-reference-v3.webp`: recreate right near-square golf card, thin tilted white frame, small ragged WORLD CLASS / GOLF label below lower-right edge, narrow diagonal green strokes emerging upper-right and lower-left; transparent surroundings, no broad blobs.
+- `public/images/discover-dark-reference-v3.webp`: background only from the close-up, almost black neutral center, dim muted palms and matte cream villa at far right; no golden lighting, bright sea/sky, paint, cards, text or UI.
+
+Cards use larger side columns to reproduce the close-up's proportions. The live heading, description and CTA remain separate from artwork. These generated reconstructions improve fidelity but are not identical copies of the original photographs.
+
+## Services terrace and foliage refresh
+
+Built-in imagegen generated `public/images/help-terrace-v2.webp` from the previous architecture image: wide Mediterranean cream villa terrace, centered complete beige seating and limestone table, pulled-back camera, simple canopy, palms and neutral warm daylight, no text or people.
+
+Built-in imagegen generated `public/images/help-foliage-v2.webp`: isolated tall narrow bird-of-paradise plant, deep olive leaves, warm light from left, complete leaf tips, transparent background, no pot or text.
+
+Removed the notched CSS roof clip and used a soft left edge for the terrace. Foliage sits independently at the far right with its top extending 44px into Discover Murcia; decorative foliage is hidden on phones.

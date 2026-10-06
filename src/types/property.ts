@@ -1,4 +1,4 @@
-export type PropertyType = 'villa' | 'apartment' | 'townhouse' | 'penthouse';
+export type PropertyType = 'villa' | 'apartment' | 'townhouse' | 'penthouse' | 'semi-detached';
 export type PropertyStatus = 'for_sale' | 'under_offer' | 'sold' | 'newly_listed';
 
 export interface Property {
@@ -15,7 +15,7 @@ export interface Property {
   status: PropertyStatus;
   bedrooms: number;
   bathrooms: number;
-  buildAreaSqm: number;
+  buildAreaSqm?: number;
   plotAreaSqm?: number;
   featured: boolean;
   hasPrivatePool: boolean;
@@ -33,6 +33,9 @@ export interface Property {
   agentPhone: string;
   agentEmail: string;
   createdAt: string;
+  sourceUrl?: string;
+  sourceCheckedAt?: string;
+  listingKind?: 'resale' | 'new-build' | 'rental';
 }
 
 export interface Resort {
@@ -43,10 +46,6 @@ export interface Resort {
   shortDesc: string;
   fullDesc: string;
   location: string;
-  golfCourse: string;
-  golfHoles: number;
-  beachDistanceKm: number;
-  airportDistanceKm: number;
   heroImage: string;
   gallery: string[];
   features: string[];

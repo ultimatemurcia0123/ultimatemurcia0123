@@ -125,8 +125,8 @@ body {
 .home-video-button { display: inline-flex; gap: 10px; align-items: center; border: 1px solid white; background: rgb(0 8 15 / 55%); padding: 8px 22px 8px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
 .home-video-button:hover { background: rgb(0 8 15 / 85%); }
 .home-hero-tools { margin-top: -37px; }
-.home-search { position: relative; }
-.home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: #030303 url('/images/discover-environment-v2.webp') center / cover; }
+.home-search { position: relative; padding-bottom: 32px; }
+.home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: #030303 url('/images/discover-dark-reference-v3.webp') center / cover; }
 .home-discover-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; gap: 38px; }
 .home-discover-copy { text-align: center; }
 .home-discover-copy h2 { font-size: clamp(34px, 3.8vw, 57px); line-height: .98; }
@@ -134,8 +134,8 @@ body {
 .home-polaroid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 7px; }
 .home-polaroid-golf { transform: rotate(7deg); }
 .home-polaroid figcaption { position: absolute; right: -14px; bottom: -20px; padding: 8px 18px; background: white; color: #05090c; font-family: var(--font-marker); text-transform: uppercase; font-size: clamp(15px, 1.6vw, 22px); line-height: 1.05; transform: rotate(-9deg); clip-path: polygon(3% 5%, 97% 0, 95% 13%, 100% 20%, 96% 32%, 100% 42%, 96% 55%, 100% 67%, 95% 75%, 98% 88%, 0 100%, 4% 86%, 0 73%, 4% 60%, 0 45%, 5% 31%, 0 18%); }
-.home-help { position: relative; overflow: hidden; padding: 25px 0 12px; background: #fafafa; }
-.home-help-photo { position: absolute; right: 0; top: 0; bottom: 0; width: 34%; background: url('/images/help-architecture.webp') center 42% / cover; clip-path: polygon(9% 0, 100% 0, 100% 100%, 22% 100%, 22% 50%, 0 29%); }
+.home-help { position: relative; overflow: visible; padding: 25px 0 12px; background: #fafafa; }
+.home-help-photo { position: absolute; right: 0; top: 0; bottom: 0; width: 34%; background: url('/images/help-terrace-v2.webp') center 62% / cover; mask-image: linear-gradient(90deg, transparent, #000 18%); }
 .home-help-intro { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 28px; width: 68%; margin-bottom: 10px; }
 .home-help-cards { display: grid; grid-template-columns: repeat(4, 1fr); width: 82%; gap: 7px; }
 .home-help-card { display: flex; align-items: flex-start; gap: 12px; border: 1px solid #e6e8eb; background: rgb(255 255 255 / 96%); border-radius: 9px; padding: 16px 12px; }
@@ -204,7 +204,7 @@ body {
 .home-sun-sticker > span:nth-of-type(n+4) { font-size: 21px; line-height: 25px; white-space: nowrap; }
 .sticker-rays { position: absolute; width: 140%; height: 115%; left: -20%; top: -18%; z-index: -1; }
 .sticker-underline { width: 115%; height: 14px; margin-top: 4px; }
-.home-discover-grid { grid-template-columns: 25% 50% 25%; gap: 0; }
+.home-discover-grid { grid-template-columns: 28% 44% 28%; gap: 0; }
 .home-discover-copy h2 { font-size: clamp(36px, 4vw, 53px); line-height: .92; text-shadow: 0 2px 0 rgb(0 0 0 / 55%); }
 .home-discover-copy > .eyebrow { margin-bottom: 8px; font-size: 9px; }
 .home-discover-copy p { font-size: 13px; line-height: 18px; margin: 12px auto; max-width: 390px; }
@@ -220,7 +220,7 @@ body {
 .home-help-card p { font-size: 10px; line-height: 14px; }
 .home-help-card > div { padding-top: 24px; }
 @media (min-width: 768px) {
-  .home-discover { min-height: 260px; padding: 24px 0; display: flex; align-items: center; }
+  .home-discover { min-height: 260px; padding: 12px 0; display: flex; align-items: center; }
   .home-discover-grid { width: 100%; gap: 0; }
 }
 @media (min-width: 1280px) {
@@ -241,7 +241,6 @@ body {
 @media (min-width: 1024px) {
   .home-help-intro > div:last-child { padding-top: 18px; }
   .home-benefit p { font-size: 10.5px; }
-  .home-properties h2 { transform: scaleX(1.15); transform-origin: left; }
 }
 
 /* Full-bleed scenery; typography and controls size independently. */
@@ -274,3 +273,24 @@ body {
   .hero-lettering-sun { top: 27px; right: 234px; width: 150px; }
 }
 @media (max-width: 767px) { .hero-lettering { display: none; } }
+
+.home-help-foliage { position: absolute; right: 0; top: -44px; height: calc(100% + 44px); width: auto; max-width: 19%; object-fit: contain; object-position: right bottom; z-index: 1; pointer-events: none; }
+@media (max-width: 767px) { .home-help-foliage { display: none; } }
+
+/* Calm inner pages; the homepage keeps its illustrated art direction. */
+.inner-page { background: #f7f8f5; color: #171717; }
+.page-shell { width: min(100%, 1200px); margin-inline: auto; padding-inline: 24px; }
+.page-section { padding-block: 48px; }
+.section-heading { font-size: clamp(1.4rem, 2.5vw, 1.85rem); font-weight: 800; line-height: 1.25; letter-spacing: -.035em; font-style: normal; }
+.page-copy { font-size: .9375rem; line-height: 1.85; color: #525252; }
+.surface-card { background: #fff; border: 1px solid #e4e5e0; border-radius: 16px; padding: 28px; }
+.action-primary, .action-secondary { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 46px; padding: 12px 22px; border-radius: 999px; font-size: .875rem; font-weight: 700; text-align: center; }
+.action-primary { background: #00f34a; color: #080808; }
+.action-primary:hover { background: #00d43e; }
+.action-secondary { border: 1px solid #d4d4d4; background: white; color: #171717; }
+.action-secondary:hover { border-color: #171717; }
+.field-label { display: block; font-size: .8125rem; font-weight: 700; margin-bottom: 8px; }
+.form-field { width: 100%; border: 1px solid #d4d4d4; border-radius: 9px; padding: 12px; background: #fff; font: inherit; font-size: .875rem; color: #171717; min-width: 0; }
+.form-field:focus { outline: 2px solid #059669; outline-offset: 2px; }
+.inner-page :is(a, button, select):focus-visible { outline: 2px solid #059669; outline-offset: 4px; }
+@media (max-width: 640px) { .page-shell { padding-inline: 20px; } .page-section { padding-block: 32px; } .surface-card { padding: 22px; } }

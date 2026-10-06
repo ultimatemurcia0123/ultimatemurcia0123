@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import HeroSearch from '@/components/HeroSearch';
 import PropertyCard from '@/components/PropertyCard';
 import DiscoverMurciaSection from '@/components/DiscoverMurciaSection';
@@ -25,7 +25,7 @@ export default function HomePage() {
               <span className="text-xs font-black tracking-[0.25em] text-[#00F34A] uppercase block mb-2">
                 {featuredPropertiesSection.badge}
               </span>
-              <h2 className="display-title text-4xl sm:text-5xl text-slate-950">
+              <h2 className="home-help-title font-extrabold tracking-tight uppercase">
                 {featuredPropertiesSection.title}
               </h2>
             </div>
@@ -40,33 +40,18 @@ export default function HomePage() {
                 <ArrowRight className="w-4 h-4" />
               </Link>
 
-              <div className="hidden sm:flex items-center gap-2">
-                <Link
-                  href="/properties"
-                  className="w-9 h-9 rounded-full border border-slate-200 hover:border-slate-400 bg-white flex items-center justify-center text-slate-700 transition-colors shadow-sm"
-                  aria-label="Previous Properties"
-                >
-                  <ChevronLeft className="w-4 h-4" />
-                </Link>
-                <Link
-                  href="/properties"
-                  className="w-9 h-9 rounded-full border border-slate-200 hover:border-slate-400 bg-white flex items-center justify-center text-slate-700 transition-colors shadow-sm"
-                  aria-label="Next Properties"
-                >
-                  <ChevronRight className="w-4 h-4" />
-                </Link>
-              </div>
+
             </div>
           </div>
 
           {/* 3 Top Property Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {latestProperties.map((property, index) => (
-              <PropertyCard key={property.id} property={property} imageSrc={["/images/preview-villa.webp", "/images/preview-terrace.webp", "/images/preview-pool.webp"][index]} />
+            {latestProperties.map((property) => (
+              <PropertyCard key={property.id} property={property} />
             ))}
           </div>
 
-          <p className="mt-1 text-[9px] leading-3 text-neutral-500">Illustrative property imagery for this design preview.</p>
+          <p className="mt-3 text-xs leading-5 text-neutral-500">Selected listings. Please confirm current availability with the team.</p>
           <div className="text-center mt-12 sm:hidden">
             <Link
               href="/properties"
