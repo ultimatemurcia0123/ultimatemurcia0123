@@ -34,3 +34,10 @@ The mascot and foliage are one composition on the homepage so responsive image s
 - BrandLogo uses fine triangular sunburst rays and a compact wordmark matching the supplied logo's proportions.
 
 The homepage now follows the four sections shown in the supplied mockup. Resort guides, testimonials and sales calls to action remain available through the site's other pages.
+
+## October 2026 layout refinement
+
+- Discover now uses `reference-coast-cutout.png` and `reference-golf-cutout.png`, original supplied design crops including their paper edges, lettering and brush marks. These are tracked public assets, copied from the local raw artwork folder. They replace the generated standalone travel photos in this section.
+- Both hero annotations use the same Kalam handwriting font, live text and green SVG accents. Sun/golf/sea lettering sits above the mascot’s pointing hand.
+- Search, benefits, header and footer use neutral black. Hero headings have layered shadows for depth; section heights, card spacing and the services photo boundary were adjusted against the reference at 1024px.
+- Compared using Chromium CLI screenshots, without Playwright. Original low-resolution cutouts and newly generated architecture mean the result is a close reconstruction rather than a pixel-identical export.

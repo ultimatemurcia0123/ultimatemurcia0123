@@ -6,9 +6,9 @@ import BrandLogo from '@/components/BrandLogo';
 
 export default function Footer() {
   return (
-    <footer className="bg-[#080C14] text-slate-300 border-t border-slate-800">
+    <footer className="bg-[#050505] text-slate-300 border-t border-slate-800">
       {/* Upper Footer: Credentials Ribbon */}
-      <div className="border-b border-slate-800/80 bg-[#0B101A] py-8">
+      <div className="border-b border-slate-800/80 bg-[#080808] py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center md:text-left">
             <div className="flex items-center gap-4 justify-center md:justify-start">

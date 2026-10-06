@@ -22,8 +22,8 @@ export default function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#080C14]/95 backdrop-blur-md shadow-lg shadow-black/30 py-3 border-b border-slate-800/80'
-          : 'bg-[#03090C] py-2 border-b border-white/5'
+          ? 'bg-[#050505]/95 backdrop-blur-md shadow-lg shadow-black/30 py-3 border-b border-slate-800/80'
+          : 'bg-[#050505] py-2 border-b border-white/5'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -139,7 +139,7 @@ export default function Navbar() {
 
       {/* Mobile Slide-out Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-[#0d131f] border-t border-slate-800 px-4 pt-4 pb-6 space-y-3 shadow-2xl">
+        <div className="lg:hidden bg-[#080808] border-t border-slate-800 px-4 pt-4 pb-6 space-y-3 shadow-2xl">
           <Link
             href="/properties"
             className="block text-slate-200 hover:text-[#00F34A] py-2 font-medium"

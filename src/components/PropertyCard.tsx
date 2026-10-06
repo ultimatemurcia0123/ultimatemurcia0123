@@ -56,17 +56,17 @@ export default function PropertyCard({ property, imageSrc }: PropertyCardProps) 
       </div>
 
       {/* Card Content (Clean Modern Minimalist) */}
-      <div className="p-4 flex-1 flex flex-col justify-between">
+      <div className="p-3 flex-1 flex flex-col justify-between">
         <div>
           {/* Price Row with Circular Arrow Button */}
-          <div className="flex items-center justify-between mb-1.5">
-            <span className="text-2xl font-black tracking-tight text-slate-950">
+          <div className="flex items-center justify-between mb-1">
+            <span className="text-[22px] font-black tracking-tight text-slate-950">
               {formattedPrice}
             </span>
 
             <Link
               href={`/properties/${property.id}`}
-              className="w-9 h-9 rounded-full border border-slate-200 bg-slate-50 hover:bg-[#00F34A] hover:border-[#00F34A] text-slate-800 hover:text-slate-950 flex items-center justify-center transition-all shadow-sm group-hover:bg-[#00F34A] group-hover:border-[#00F34A]"
+              className="w-8 h-8 rounded-full border border-slate-200 bg-slate-50 hover:bg-[#00F34A] hover:border-[#00F34A] text-slate-800 hover:text-slate-950 flex items-center justify-center transition-all shadow-sm group-hover:bg-[#00F34A] group-hover:border-[#00F34A]"
               aria-label={`View ${property.title}`}
             >
               <ArrowRight className="w-4 h-4" />
@@ -74,13 +74,13 @@ export default function PropertyCard({ property, imageSrc }: PropertyCardProps) 
           </div>
 
           {/* Location Row */}
-          <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mb-3">
+          <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mb-2">
             <MapPin className="w-3.5 h-3.5 text-slate-400 shrink-0" />
             <span className="truncate">{property.resortName}</span>
           </div>
 
           {/* Specs Ribbon: Bed | Bath | m² */}
-          <div className="flex items-center gap-5 pt-1 text-slate-600 text-xs font-semibold">
+          <div className="flex items-center gap-5 text-slate-600 text-xs font-semibold">
             <div className="flex items-center gap-1.5">
               <Bed className="w-4 h-4 text-slate-400" />
               <span>{property.bedrooms}</span>

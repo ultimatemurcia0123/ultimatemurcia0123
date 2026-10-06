@@ -44,14 +44,14 @@ function SearchField({
   children: React.ReactNode;
 }) {
   return (
-    <label className="group relative flex items-center gap-3 rounded-xl border border-white/25 bg-black/15 px-4 py-3 hover:border-[#00F34A]/60 focus-within:border-[#00F34A] focus-within:ring-2 focus-within:ring-[#00F34A]/25 transition-all cursor-pointer">
+    <label className="group relative flex items-center gap-3 rounded-xl border border-white/25 bg-black/15 px-4 py-2 hover:border-[#00F34A]/60 focus-within:border-[#00F34A] focus-within:ring-2 focus-within:ring-[#00F34A]/25 transition-all cursor-pointer">
       <Icon className="w-5 h-5 text-slate-300 group-hover:text-[#00F34A] shrink-0 transition-colors" />
       <span className="flex-1 min-w-0">
-        <span className="block text-[11px] font-semibold text-slate-400">{label}</span>
+        <span className="block text-[10px] leading-4 font-medium text-white/75">{label}</span>
         <select
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-transparent text-sm font-semibold text-white focus:outline-none cursor-pointer appearance-none pr-5"
+          className="w-full bg-transparent text-xs leading-4 font-medium text-white focus:outline-none cursor-pointer appearance-none pr-5"
         >
           {children}
         </select>
@@ -82,7 +82,7 @@ export default function HeroSearch() {
   };
 
   const { hero } = SITE_CONTENT;
-  const optionClass = 'bg-[#0B111D] text-white';
+  const optionClass = 'bg-[#080808] text-white';
 
   return (
     <section className="home-hero relative text-white overflow-hidden">
@@ -91,10 +91,15 @@ export default function HeroSearch() {
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={IMAGES.hero.garden} alt="Sunny pointing across a Mediterranean villa and pool, surrounded by flowering tropical plants" className="home-hero-scene" width={1774} height={887} fetchPriority="high" />
         <div className="home-hero-shade" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/life-murcia-lettering.svg" alt="Life in Murcia" className="home-life-sticker" />
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/images/sun-golf-lettering.webp" alt="Sun. Golf. Sea. A brighter tomorrow." className="home-sun-sticker" />
+        <div className="home-life-sticker reference-handwriting" aria-label="Life in Murcia">
+          <span>LIFE</span><span>IN</span><span>MURCIA</span>
+          <svg viewBox="0 0 140 18" aria-hidden="true"><path d="M2 14 137 1 130 8 9 18Z" fill="#00f34a" /></svg>
+        </div>
+        <div className="home-sun-sticker reference-handwriting" aria-label="Sun. Golf. Sea. A brighter tomorrow.">
+          <svg className="sticker-rays" viewBox="0 0 130 200" aria-hidden="true" fill="none" stroke="#00f34a" strokeWidth="4" strokeLinecap="round"><path d="M18 5Q3 18 1 39M10 3 3 14M104 22 120 9M111 42 129 39M108 57 121 66M8 92 0 84M5 111 0 115M16 127 4 140" /></svg>
+          <span>SUN</span><span>GOLF</span><span>SEA</span><span>A BRIGHTER</span><span>TOMORROW</span>
+          <svg className="sticker-underline" viewBox="0 0 140 18" aria-hidden="true"><path d="M2 14 137 1 130 8 9 18Z" fill="#00f34a" /></svg>
+        </div>
         <div className="home-hero-copy">
           <div className="eyebrow">{hero.badgeTop}</div>
           <h1 className="display-title">
@@ -102,7 +107,7 @@ export default function HeroSearch() {
             <span className="block text-[#00F34A]">{hero.headlinePart2}</span>
           </h1>
           <p>Exceptional properties. A brighter lifestyle.<br />We help you buy or sell in Murcia and Costa Cálida.</p>
-          <div className="flex flex-wrap items-center justify-center gap-4 mt-5">
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-3.5">
             <Link href={hero.primaryCtaLink} className="home-primary-button">
               {hero.primaryCtaText}<ArrowRight className="w-4 h-4" />
             </Link>
@@ -116,7 +121,7 @@ export default function HeroSearch() {
       <div className="home-hero-tools relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search card with tabs */}
         <div className="home-search">
-          <div className="inline-flex items-center gap-1 rounded-t-2xl bg-[#050D10]/95 backdrop-blur-xl border border-b-0 border-slate-700/60 px-3 pt-3 pb-2">
+          <div className="inline-flex items-center gap-1 rounded-t-2xl bg-[#050505]/95 backdrop-blur-xl border border-b-0 border-slate-700/60 px-3 pt-2 pb-1">
             {hero.tabs.map((tab) => {
               const isActive = activeTab === tab;
               return (
@@ -124,7 +129,7 @@ export default function HeroSearch() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab as Tab)}
-                  className={`text-sm font-semibold px-6 py-2 rounded-full transition-all ${
+                  className={`text-xs font-semibold px-6 py-1.5 rounded-full transition-all ${
                     isActive
                       ? 'bg-[#00F34A] text-slate-950 shadow-[0_6px_20px_-6px_rgba(0,243,74,0.9)]'
                       : 'text-slate-300 hover:text-white'
@@ -137,7 +142,7 @@ export default function HeroSearch() {
           </div>
           <form
             onSubmit={handleSearch}
-            className="rounded-2xl rounded-tl-none bg-[#050D10]/95 backdrop-blur-xl border border-slate-700/60 p-3 sm:p-4 shadow-2xl shadow-black/60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-3"
+            className="rounded-2xl rounded-tl-none bg-[#050505]/95 backdrop-blur-xl border border-slate-700/60 p-3 shadow-2xl shadow-black/60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-3"
           >
             <SearchField icon={MapPin} label="Location" value={location} onChange={setLocation}>
               <option value="" className={optionClass}>Any area</option>
@@ -174,7 +179,7 @@ export default function HeroSearch() {
             </SearchField>
             <button
               type="submit"
-              className="group h-full min-h-[58px] rounded-2xl bg-[#00F34A] hover:bg-[#00D43E] text-slate-950 font-bold text-base px-8 flex items-center justify-center gap-2 transition-all shadow-[0_10px_30px_-10px_rgba(0,243,74,0.9)]"
+              className="group h-full min-h-[46px] rounded-2xl bg-[#00F34A] hover:bg-[#00D43E] text-slate-950 font-bold text-sm px-6 flex items-center justify-center gap-2 transition-all shadow-[0_10px_30px_-10px_rgba(0,243,74,0.9)]"
             >
               Search
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />

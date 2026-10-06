@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Plus_Jakarta_Sans, Barlow_Condensed, Permanent_Marker } from 'next/font/google';
+import { Plus_Jakarta_Sans, Barlow_Condensed, Permanent_Marker, Kalam } from 'next/font/google';
 import './globals.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
@@ -29,6 +29,8 @@ const marker = Permanent_Marker({
   weight: '400',
   display: 'swap',
 });
+
+const handwriting = Kalam({ subsets: ['latin'], weight: '400', variable: '--font-handwriting', display: 'swap' });
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://ultimatemurcia.com'),
@@ -73,7 +75,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${barlow.variable} ${marker.variable} scroll-smooth`}
+      className={`${jakarta.variable} ${barlow.variable} ${marker.variable} ${handwriting.variable} scroll-smooth`}
     >
       <body className="font-sans min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-[#00D26A] selection:text-slate-950">
         <Navbar />

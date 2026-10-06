@@ -113,22 +113,20 @@ body {
 }
 
 /* Homepage composition follows the supplied full-page art reference. */
-.home-hero { background: #020708; }
-.home-hero-stage { position: relative; height: clamp(410px, 40vw, 590px); }
+.home-hero { background: #030303; }
+.home-hero-stage { position: relative; height: clamp(396px, 39vw, 570px); }
 .home-hero-scene { position: absolute; inset: 0; width: 100%; height: auto; min-height: 100%; object-fit: cover; object-position: center top; }
-.home-hero-shade { position: absolute; inset: 0; height: calc(100% + 160px); background: linear-gradient(0deg, #020708 0%, rgb(2 7 8 / 86%) 9%, transparent 32%), linear-gradient(90deg, rgb(0 5 9 / 22%), rgb(0 5 9 / 39%) 48%, rgb(0 5 9 / 7%) 83%); }
-.home-hero-copy { position: relative; z-index: 1; width: 61%; margin: auto; text-align: center; padding-top: clamp(24px, 3vw, 48px); }
-.home-hero-copy h1 { font-size: clamp(94px, 9.5vw, 148px); margin-top: 15px; text-shadow: 0 4px 15px rgb(0 0 0 / 20%); }
-.home-hero-copy p { font-size: clamp(14px, 1.35vw, 19px); line-height: 1.55; margin-top: 18px; text-shadow: 0 1px 8px #06111d; }
+.home-hero-shade { position: absolute; inset: 0; height: calc(100% + 160px); background: linear-gradient(0deg, #030303 0%, rgb(3 3 3 / 92%) 9%, transparent 32%), linear-gradient(90deg, rgb(0 5 9 / 22%), rgb(0 5 9 / 39%) 48%, rgb(0 5 9 / 7%) 83%); }
+.home-hero-copy { position: relative; z-index: 1; width: 61%; margin: auto; text-align: center; padding-top: clamp(16px, 2vw, 32px); }
+.home-hero-copy h1 { font-size: clamp(94px, 9.5vw, 148px); line-height: .70; margin-top: 8px; text-shadow: 0 1px 0 #cfd4d3, 0 2px 0 #a9afad, 0 4px 2px rgb(0 0 0 / 22%), 0 9px 16px rgb(0 0 0 / 36%); }
+.home-hero-copy p { font-size: clamp(14px, 1.35vw, 19px); line-height: 1.55; margin-top: 10px; text-shadow: 0 1px 8px #000; }
 .home-primary-button { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 13px 25px; border-radius: 999px; background: #00f34a; color: #031208; font-size: 12px; font-weight: 800; transition: background .2s, transform .2s; }
 .home-primary-button:hover { background: #00d43e; transform: translateY(-2px); }
 .home-video-button { display: inline-flex; gap: 10px; align-items: center; border: 1px solid white; background: rgb(0 8 15 / 55%); padding: 8px 22px 8px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
 .home-video-button:hover { background: rgb(0 8 15 / 85%); }
-.home-life-sticker { position: absolute; left: 2.8%; top: 8%; width: clamp(85px, 11vw, 160px); height: auto; z-index: 1; }
-.home-sun-sticker { position: absolute; right: 16%; top: 2%; width: clamp(88px, 9.5vw, 140px); height: clamp(175px, 19vw, 280px); z-index: 1; }
 .home-hero-tools { margin-top: -37px; }
 .home-search { position: relative; }
-.home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: #020a0d url('/images/discover-palms.webp') center / cover; }
+.home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: #030303 url('/images/discover-palms.webp') center / cover; }
 .home-discover-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; gap: 38px; }
 .home-discover-copy { text-align: center; }
 .home-discover-copy h2 { font-size: clamp(34px, 3.8vw, 57px); line-height: .98; }
@@ -136,10 +134,10 @@ body {
 .home-polaroid img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 7px; }
 .home-polaroid-golf { transform: rotate(7deg); }
 .home-polaroid figcaption { position: absolute; right: -14px; bottom: -20px; padding: 8px 18px; background: white; color: #05090c; font-family: var(--font-marker); text-transform: uppercase; font-size: clamp(15px, 1.6vw, 22px); line-height: 1.05; transform: rotate(-9deg); clip-path: polygon(3% 5%, 97% 0, 95% 13%, 100% 20%, 96% 32%, 100% 42%, 96% 55%, 100% 67%, 95% 75%, 98% 88%, 0 100%, 4% 86%, 0 73%, 4% 60%, 0 45%, 5% 31%, 0 18%); }
-.home-help { position: relative; overflow: hidden; padding: 35px 0 20px; background: #fafafa; }
-.home-help-photo { position: absolute; right: 0; top: 0; bottom: 0; width: 39%; background: url('/images/help-architecture.webp') center 42% / cover; clip-path: polygon(9% 0, 100% 0, 100% 100%, 22% 100%, 22% 50%, 0 29%); }
-.home-help-intro { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 36px; width: 68%; margin-bottom: 24px; }
-.home-help-cards { display: grid; grid-template-columns: repeat(4, 1fr); width: 84%; gap: 7px; }
+.home-help { position: relative; overflow: hidden; padding: 25px 0 12px; background: #fafafa; }
+.home-help-photo { position: absolute; right: 0; top: 0; bottom: 0; width: 34%; background: url('/images/help-architecture.webp') center 42% / cover; clip-path: polygon(9% 0, 100% 0, 100% 100%, 22% 100%, 22% 50%, 0 29%); }
+.home-help-intro { display: grid; grid-template-columns: .9fr 1.1fr; align-items: center; gap: 28px; width: 68%; margin-bottom: 10px; }
+.home-help-cards { display: grid; grid-template-columns: repeat(4, 1fr); width: 82%; gap: 7px; }
 .home-help-card { display: flex; align-items: flex-start; gap: 12px; border: 1px solid #e6e8eb; background: rgb(255 255 255 / 96%); border-radius: 9px; padding: 16px 12px; }
 .home-help-card > div { padding-top: 20px; }
 .home-page .eyebrow { color: #00bd39; }
@@ -150,7 +148,6 @@ body {
 @media (max-width: 1023px) and (min-width: 768px) {
   .home-hero-copy { width: 65%; padding-top: 35px; }
   .home-hero-copy h1 { font-size: 88px; }
-  .home-sun-sticker { right: 16%; width: 9.5%; height: 175px; }
   .home-life-sticker { left: 2%; }
   .home-discover-grid { gap: 20px; grid-template-columns: 1fr 2fr 1fr; }
   .home-help-intro { width: 82%; }
@@ -165,7 +162,7 @@ body {
   .home-hero-copy p { font-size: 13px; }
   .home-hero-copy .eyebrow { font-size: 9px; letter-spacing: .28em; }
   .home-hero-scene { inset: auto 0 0; height: 240px; min-height: 0; object-position: right center; }
-  .home-hero-shade { height: 100%; background: linear-gradient(0deg, #020708 0%, transparent 15%, transparent 37%, #020708 52%); }
+  .home-hero-shade { height: 100%; background: linear-gradient(0deg, #030303 0%, transparent 15%, transparent 37%, #030303 52%); }
   .home-life-sticker, .home-sun-sticker { display: none; }
   .home-hero-tools { margin-top: -20px; }
   .home-primary-button { padding: 12px 20px; }
@@ -183,16 +180,66 @@ body {
   .home-help-card > div { padding-top: 0; }
 }
 
-.home-properties { padding: 28px 0 18px; }
+.home-properties { padding: 28px 0 8px; }
 .home-page .max-w-7xl { max-width: 1380px; }
 @media (min-width: 768px) { .home-page .max-w-7xl { padding-left: 4.5%; padding-right: 4.5%; } .home-discover { padding: 32px 0; } .home-discover-grid { gap: 30px; } }
 
-.home-benefits { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 28px 0; margin-top: 14px; background: #020708; box-shadow: 0 0 0 100vmax #020708; clip-path: inset(0 -100vmax); }
-.home-benefit { display: flex; align-items: center; gap: 13px; min-width: 0; padding: 0 18px; border-right: 1px solid #ffffff12; }
+.home-benefits { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 18px 0; margin-top: 0; background: #030303; box-shadow: 0 0 0 100vmax #030303; clip-path: inset(0 -100vmax); }
+.home-benefit { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0 12px; border-right: 1px solid #ffffff12; }
 .home-benefit:first-child { padding-left: 0; }
 .home-benefit:last-child { border-right: 0; padding-right: 0; }
 .home-benefit svg { width: 42px; height: 42px; flex: 0 0 42px; }
-.home-benefit h3 { font-size: 13px; line-height: 1.4; }
+.home-benefit h3 { font-size: 12px; line-height: 1.4; white-space: nowrap; }
 .home-benefit p { font-size: 11px; line-height: 1.5; margin-top: 2px; }
 @media (max-width: 1023px) { .home-benefit { padding: 0 10px; gap: 9px; } .home-benefit svg { width: 35px; height: 35px; flex-basis: 35px; } .home-benefit h3 { font-size: 11px; } .home-benefit p { font-size: 10px; } }
 @media (max-width: 767px) { .home-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; } .home-benefit, .home-benefit:first-child, .home-benefit:last-child { padding: 0; border: 0; } }
+
+/* Reference-sized typography and paper artwork. */
+.home-hero-copy h1 > span:last-child { font-size: 1.15em; line-height: .78; margin-top: 0; transform: scaleX(1.12); text-shadow: 0 1px 0 #00d841, 0 3px 0 #00992d, 0 7px 12px rgb(0 0 0 / 34%); }
+.reference-handwriting { position: absolute; z-index: 1; font-family: var(--font-handwriting), cursive; font-weight: 400; color: #fff; text-align: center; transform: rotate(-10deg); }
+.reference-handwriting > span { display: block; }
+.home-life-sticker { left: 2.6%; top: 32px; width: 108px; font-size: 30px; line-height: 1; }
+.home-life-sticker > svg { width: 100%; height: 15px; margin-top: 2px; }
+.home-sun-sticker { right: 17%; top: 23px; width: 110px; font-size: 27px; line-height: 30px; }
+.home-sun-sticker > span:nth-of-type(n+4) { font-size: 21px; line-height: 25px; white-space: nowrap; }
+.sticker-rays { position: absolute; width: 140%; height: 115%; left: -20%; top: -18%; z-index: -1; }
+.sticker-underline { width: 115%; height: 14px; margin-top: 4px; }
+.home-discover-grid { grid-template-columns: 25% 50% 25%; gap: 0; }
+.home-discover-copy h2 { font-size: clamp(36px, 4vw, 53px); line-height: .92; text-shadow: 0 2px 0 rgb(0 0 0 / 55%); }
+.home-discover-copy > .eyebrow { margin-bottom: 8px; font-size: 9px; }
+.home-discover-copy p { font-size: 13px; line-height: 18px; margin: 12px auto; max-width: 390px; }
+.home-reference-cutout { width: 100%; filter: drop-shadow(0 9px 9px rgb(0 0 0 / 55%)); }
+.home-reference-cutout img { display: block; width: 100%; height: auto; mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent); }
+.home-reference-coast { transform: translateX(-8px); }
+.home-reference-golf { width: 94%; justify-self: end; transform: translateX(8px); }
+.home-help-title { font-size: clamp(25px, 2.8vw, 36px); line-height: 1.07; }
+.home-help-intro p { font-size: 11px; line-height: 15px; margin-bottom: 10px; }
+.home-help-intro .home-primary-button { font-size: 10px; padding: 8px 18px; }
+.home-help-card { gap: 10px; padding: 12px 10px; min-height: 104px; }
+.home-help-card h3 { font-size: 10px; margin-bottom: 5px; }
+.home-help-card p { font-size: 10px; line-height: 14px; }
+.home-help-card > div { padding-top: 24px; }
+@media (min-width: 768px) {
+  .home-discover { min-height: 260px; padding: 24px 0; display: flex; align-items: center; }
+  .home-discover-grid { width: 100%; gap: 0; }
+}
+@media (min-width: 1280px) {
+  .home-life-sticker { font-size: 38px; width: 135px; top: 45px; }
+  .home-sun-sticker { width: 135px; font-size: 34px; line-height: 37px; top: 35px; }
+  .home-sun-sticker > span:nth-of-type(n+4) { font-size: 26px; line-height: 31px; }
+}
+@media (max-width: 767px) {
+  .reference-handwriting { display: none; }
+  .home-discover-grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+  .home-reference-coast, .home-reference-golf { transform: none; max-width: 260px; width: 100%; justify-self: center; }
+  .home-help-intro { width: 100%; grid-template-columns: 1fr; }
+  .home-help-cards { width: 100%; }
+  .home-help-card > div { padding-top: 0; }
+  .home-benefit h3 { white-space: normal; }
+}
+
+@media (min-width: 1024px) {
+  .home-help-intro > div:last-child { padding-top: 18px; }
+  .home-benefit p { font-size: 10.5px; }
+  .home-properties h2 { transform: scaleX(1.15); transform-origin: left; }
+}
