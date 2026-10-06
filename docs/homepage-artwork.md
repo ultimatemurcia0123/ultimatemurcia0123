@@ -41,3 +41,5 @@ The homepage now follows the four sections shown in the supplied mockup. Resort 
 - Both hero annotations use the same Kalam handwriting font, live text and green SVG accents. Sun/golf/sea lettering sits above the mascot’s pointing hand.
 - Search, benefits, header and footer use neutral black. Hero headings have layered shadows for depth; section heights, card spacing and the services photo boundary were adjusted against the reference at 1024px.
 - Compared using Chromium CLI screenshots, without Playwright. Original low-resolution cutouts and newly generated architecture mean the result is a close reconstruction rather than a pixel-identical export.
+
+Wide desktop correction after reviewing `howitlooks1.png`: capped the hero composition at 1120px, headline at 108px, and stage at 440px above 1100px viewport width. Preserved the scene’s 2:1 aspect ratio and moved the annotation toward the pointing hand. Checked at 1536×864 with Chromium CLI; the previous 1024px check missed the wide-screen scaling issue.
