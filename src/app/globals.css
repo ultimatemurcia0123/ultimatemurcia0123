@@ -303,12 +303,12 @@ body {
 .home-hero-copy { width: min(64%, 760px); padding-top: 44px; }
 .home-hero-copy p { font-size: 16px; }
 .hero-lettering-sun { display: none; }
-.home-search { padding: 20px; border: 1px solid #dfe3df; border-radius: 20px; background: #fff; color: #171717; box-shadow: 0 16px 40px #0003; }
-.home-search-tabs { display: flex; width: fit-content; max-width: 100%; gap: 4px; padding: 4px; margin-bottom: 20px; border-radius: 12px; background: #eef1ed; }
+.home-search { padding: 16px; border: 1px solid #dfe3df; border-radius: 20px; background: #fff; color: #171717; box-shadow: 0 16px 40px #0003; }
+.home-search-tabs { display: flex; width: fit-content; max-width: 100%; gap: 4px; padding: 4px; margin-bottom: 12px; border-radius: 12px; background: #eef1ed; }
 .home-search-tab { min-height: 44px; padding: 10px 22px; border-radius: 9px; font-size: 14px; font-weight: 700; cursor: pointer; }
 .home-search-tab:hover { background: #dfe6dc; }
 .home-search-tab.is-active { background: #00f34a; color: #080808; }
-.home-search-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: end; }
+.home-search-form { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: end; }
 .home-search-field { position: relative; display: block; min-width: 0; cursor: pointer; }
 .home-search-label { display: flex; align-items: center; gap: 7px; font-size: 13px; font-weight: 700; margin-bottom: 8px; }
 .home-search-label svg { color: #39704a; }
@@ -324,6 +324,14 @@ body {
 .home-help-card > div { padding-top: 0; }
 .home-help-intro .home-primary-button { min-height: 44px; font-size: 13px; }
 .home-properties { padding-block: 36px; }
+/* Leave breathing room between the finder and the benefits strip. */
+.home-benefits { margin-top: 24px; }
+@media (min-width: 768px) {
+  .home-hero-tools { margin-top: -44px; }
+  .home-search-field select { min-height: 48px; padding-block: 10px; }
+  .home-search-chevron { bottom: 15px; }
+  .home-search-submit { min-height: 48px; padding-block: 10px; }
+}
 @media (min-width: 1200px) {
   .home-search-form { grid-template-columns: repeat(4, minmax(0, 1fr)) auto; }
   .home-search-submit { grid-column: auto; }
