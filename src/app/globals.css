@@ -361,3 +361,26 @@ body {
   .home-benefit h3 { font-size: 14px; }
   .home-benefit p { font-size: 12px; }
 }
+
+/* Align the services introduction and cards on the same content grid. */
+.home-help { padding-block: 40px; }
+.home-help-intro { width: 82%; gap: 32px; margin-bottom: 24px; }
+.home-help-cards { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.home-help-card { flex-direction: column; gap: 16px; padding: 22px; background: #fff; border-radius: 12px; }
+.home-help-card > div { min-width: 0; width: 100%; padding-top: 0; }
+.home-help-card h3 { min-height: 2.8em; margin-bottom: 8px; }
+@media (max-width: 1199px) {
+  .home-help-intro, .home-help-cards { width: 100%; }
+  .home-help-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-help-photo { opacity: .13; }
+  .home-help-foliage { display: none; }
+}
+@media (max-width: 767px) {
+  .home-help-intro { gap: 16px; }
+  .home-help-card { padding: 20px; }
+}
+@media (max-width: 639px) {
+  .home-help-cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
+  .home-help-card { flex-direction: row; }
+  .home-help-card h3 { min-height: 0; }
+}
