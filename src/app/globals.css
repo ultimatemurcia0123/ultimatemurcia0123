@@ -6,7 +6,7 @@
   --color-emerald-accent: #00F34A;
   --color-emerald-hover: #00D43E;
   --color-emerald-light: #E6FBF0;
-  --color-onyx-dark: #080C14;
+  --color-onyx-dark: #000000;
   --color-onyx-card: #101623;
   --color-onyx-border: #1E2738;
 }
@@ -102,7 +102,7 @@ body {
   width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #080C14;
+  background: #000000;
 }
 ::-webkit-scrollbar-thumb {
   background: #1E2738;
@@ -113,10 +113,10 @@ body {
 }
 
 /* Homepage composition follows the supplied full-page art reference. */
-.home-hero { background: #030303; }
+.home-hero { background: #000000; }
 .home-hero-stage { position: relative; height: clamp(396px, 39vw, 570px); }
 .home-hero-scene { position: absolute; inset: 0; width: 100%; height: auto; min-height: 100%; object-fit: cover; object-position: center top; }
-.home-hero-shade { position: absolute; inset: 0; height: calc(100% + 160px); background: linear-gradient(0deg, #030303 0%, rgb(3 3 3 / 92%) 9%, transparent 32%), linear-gradient(90deg, rgb(0 5 9 / 22%), rgb(0 5 9 / 39%) 48%, rgb(0 5 9 / 7%) 83%); }
+.home-hero-shade { position: absolute; inset: 0; height: calc(100% + 160px); background: linear-gradient(0deg, #000000 0%, rgb(0 0 0 / 92%) 9%, transparent 32%), linear-gradient(90deg, rgb(0 5 9 / 22%), rgb(0 5 9 / 39%) 48%, rgb(0 5 9 / 7%) 83%); }
 .home-hero-copy { position: relative; z-index: 1; width: 61%; margin: auto; text-align: center; padding-top: clamp(16px, 2vw, 32px); }
 
 .home-hero-copy p { font-size: clamp(14px, 1.35vw, 19px); line-height: 1.55; margin-top: 10px; text-shadow: 0 1px 8px #000; }
@@ -126,7 +126,7 @@ body {
 .home-video-button:hover { background: rgb(0 8 15 / 85%); }
 .home-hero-tools { margin-top: -37px; }
 .home-search { position: relative; padding-bottom: 32px; }
-.home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: #030303 url('/images/discover-dark-reference-v3.webp') center / cover; }
+.home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: #000000 url('/images/discover-dark-reference-v3.webp') center / cover; }
 .home-discover-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; gap: 38px; }
 .home-discover-copy { text-align: center; }
 
@@ -162,7 +162,7 @@ body {
   .home-hero-copy p { font-size: 13px; }
   .home-hero-copy .eyebrow { font-size: 9px; letter-spacing: .28em; }
   .home-hero-scene { inset: auto 0 0; height: 240px; min-height: 0; object-position: right center; }
-  .home-hero-shade { height: 100%; background: linear-gradient(0deg, #030303 0%, transparent 15%, transparent 37%, #030303 52%); }
+  .home-hero-shade { height: 100%; background: linear-gradient(0deg, #000000 0%, transparent 15%, transparent 37%, #000000 52%); }
   .home-life-sticker, .home-sun-sticker { display: none; }
   .home-hero-tools { margin-top: -20px; }
   .home-primary-button { padding: 12px 20px; }
@@ -184,7 +184,7 @@ body {
 .home-page .max-w-7xl { max-width: 1380px; }
 @media (min-width: 768px) { .home-page .max-w-7xl { padding-left: 4.5%; padding-right: 4.5%; } .home-discover { padding: 32px 0; } .home-discover-grid { gap: 30px; } }
 
-.home-benefits { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 18px 0; margin-top: 0; background: #030303; box-shadow: 0 0 0 100vmax #030303; clip-path: inset(0 -100vmax); }
+.home-benefits { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 18px 0; margin-top: 0; background: #000000; box-shadow: 0 0 0 100vmax #000000; clip-path: inset(0 -100vmax); }
 .home-benefit { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0 12px; border-right: 1px solid #ffffff12; }
 .home-benefit:first-child { padding-left: 0; }
 .home-benefit:last-child { border-right: 0; padding-right: 0; }
@@ -248,7 +248,7 @@ body {
 @media (min-width: 1100px) {
   .home-hero-stage { width: 100%; height: 460px; }
   .home-hero-scene { width: 100%; height: 600px; min-height: 0; object-fit: cover; object-position: center 72%; }
-  .home-hero-shade { height: 610px; background: linear-gradient(0deg, #030303, transparent 28%), linear-gradient(90deg, transparent, rgb(0 0 0 / 25%) 48%, transparent 80%); }
+  .home-hero-shade { height: 610px; background: linear-gradient(0deg, #000000, transparent 28%), linear-gradient(90deg, transparent, rgb(0 0 0 / 25%) 48%, transparent 80%); }
   .home-hero-mascot { display: block; position: absolute; z-index: 1; right: -18px; top: 24px; width: 315px; height: auto; mask-image: linear-gradient(#000 90%, transparent 100%); }
   .home-hero-copy { max-width: 760px; padding-top: 32px; }
 
@@ -367,7 +367,7 @@ body {
 .home-help-intro { width: 100%; max-width: 850px; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 28px; margin-bottom: 24px; }
 .home-help-intro > div:last-child { padding-top: 0; }
 .home-help-cards { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin-inline: auto; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
-.home-help-card { flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 16px; background: #101310; color: #fff; border: 1px solid #293329; border-radius: 12px; }
+.home-help-card { flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 16px; background: #000000; color: #fff; border: 1px solid #293329; border-radius: 12px; }
 .home-help-card > span { width: 32px; height: 32px; background: #00f34a; color: #081008; }
 .home-help-card > span svg { width: 19px; height: 19px; }
 .home-help-card > div { min-width: 0; width: 100%; padding-top: 0; }

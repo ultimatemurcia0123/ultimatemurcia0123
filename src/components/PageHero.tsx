@@ -4,11 +4,11 @@ export default function PageHero({ eyebrow, title, highlight, description, image
   eyebrow: string; title: string; highlight?: string; description?: string;
   image?: string; children?: ReactNode;
 }) {
-  return <section className="relative isolate overflow-hidden bg-[#080808] text-white">
+  return <section className="relative isolate overflow-hidden bg-black text-white">
     {image && <div className="absolute inset-0 -z-10" aria-hidden="true">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={image} alt="" className="h-full w-full object-cover opacity-25" />
-      <div className="absolute inset-0 bg-gradient-to-r from-[#080808] via-[#080808]/85 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-r from-black via-black/85 to-transparent" />
     </div>}
     <div className="page-shell py-12 sm:py-16">
       <p className="eyebrow mb-4">{eyebrow}</p>

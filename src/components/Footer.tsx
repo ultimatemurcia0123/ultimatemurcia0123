@@ -4,7 +4,7 @@ import { SITE_CONTENT } from '@/data/site-content';
 
 export default function Footer() {
   const { brand } = SITE_CONTENT;
-  return <footer className="bg-[#050505] text-neutral-300 border-t border-white/10">
+  return <footer className="bg-black text-neutral-300 border-t border-white/10">
     <div className="page-shell py-12">
       <div className="grid sm:grid-cols-2 lg:grid-cols-[1.6fr_1fr_1.2fr] gap-9">
         <div><BrandLogo variant="light" /><p className="mt-5 text-sm leading-relaxed max-w-sm text-neutral-400">Property sales and a personal property finding service in Murcia and Alicante.</p></div>

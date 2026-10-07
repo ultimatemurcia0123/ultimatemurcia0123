@@ -10,7 +10,7 @@ const links = [['/properties', 'Properties'], ['/resorts', 'Areas'], ['/services
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
-  return <header className="sticky top-0 z-50 bg-[#050505]/95 backdrop-blur-md border-b border-white/10 py-2">
+  return <header className="sticky top-0 z-50 bg-black border-b border-white/10 py-2">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between gap-5">
       <BrandLogo variant="light" />
       <nav aria-label="Main navigation" className="hidden lg:flex gap-6 text-sm font-semibold text-neutral-200">
