@@ -362,42 +362,46 @@ body {
   .home-benefit p { font-size: 12px; }
 }
 
-/* Align the services introduction and cards on the same content grid. */
-.home-help { padding-block: 40px; }
-.home-help-intro { width: 100%; gap: 32px; margin-bottom: 24px; }
-.home-help-cards { position: relative; z-index: 2; width: 100%; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
-.home-help-card { flex-direction: column; align-items: center; text-align: center; gap: 16px; padding: 22px; background: #fff; border-radius: 12px; }
+/* Compact service cards, with the introduction kept beside the heading. */
+.home-help { padding-block: 32px; }
+.home-help-intro { width: 100%; max-width: 850px; grid-template-columns: minmax(0, 360px) minmax(0, 1fr); gap: 28px; margin-bottom: 24px; }
+.home-help-intro > div:last-child { padding-top: 0; }
+.home-help-cards { position: relative; z-index: 2; width: 100%; max-width: 1100px; margin-inline: auto; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; }
+.home-help-card { flex-direction: column; align-items: center; text-align: center; gap: 8px; padding: 16px; background: #101310; color: #fff; border: 1px solid #293329; border-radius: 12px; }
+.home-help-card > span { width: 32px; height: 32px; background: #00f34a; color: #081008; }
+.home-help-card > span svg { width: 19px; height: 19px; }
 .home-help-card > div { min-width: 0; width: 100%; padding-top: 0; }
-.home-help-card h3 { min-height: 2.8em; margin-bottom: 8px; }
+.home-help-card h3 { min-height: 2.8em; margin-bottom: 4px; font-size: 13px; line-height: 1.4; }
+.home-help-card p { color: #cbd2cb; font-size: 13px; line-height: 1.5; }
 @media (max-width: 1199px) {
-  .home-help-intro, .home-help-cards { width: 100%; }
   .home-help-cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .home-help-photo { opacity: .13; }
   .home-help-foliage { display: none; }
 }
 @media (max-width: 767px) {
-  .home-help-intro { gap: 16px; }
-  .home-help-card { padding: 20px; }
+  .home-help-intro { grid-template-columns: minmax(0, 1fr); gap: 16px; }
 }
 @media (max-width: 639px) {
-  .home-help-cards { grid-template-columns: minmax(0, 1fr); gap: 12px; }
-  .home-help-card { flex-direction: column; }
+  .home-help-cards { grid-template-columns: minmax(0, 1fr); gap: 10px; }
+  .home-help-card { flex-direction: row; text-align: left; gap: 12px; }
   .home-help-card h3 { min-height: 0; }
 }
 
-/* Each benefit occupies an equal, centred column inside the search container. */
-.home-benefits { gap: 0; }
+/* Slim benefits strip: equally sized columns with centred icon/text groups. */
+.home-benefits { gap: 0; padding-block: 12px; }
 .home-benefit, .home-benefit:first-child, .home-benefit:last-child {
-  flex-direction: column;
-  justify-content: flex-start;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  text-align: center;
-  padding: 12px 16px;
-  gap: 12px;
+  text-align: left;
+  padding: 4px 12px;
+  gap: 10px;
 }
-.home-benefit h3 { white-space: normal; font-size: 14px; }
-.home-benefit p { font-size: 12px; }
+.home-benefit svg { width: 30px; height: 30px; flex-basis: 30px; }
+.home-benefit h3 { white-space: normal; font-size: 12px; }
+.home-benefit p { font-size: 11px; }
 @media (max-width: 767px) {
-  .home-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px 0; }
-  .home-benefit, .home-benefit:first-child, .home-benefit:last-child { padding: 12px 8px; }
+  .home-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 0; }
+  .home-benefit, .home-benefit:first-child, .home-benefit:last-child { padding: 4px 6px; gap: 8px; }
+  .home-benefit svg { width: 26px; height: 26px; flex-basis: 26px; }
 }
