@@ -50,3 +50,10 @@ Review reference: https://raw.githubusercontent.com/vercel-labs/web-interface-gu
 - Gallery next, previous, arrow-key and wraparound behavior passed.
 - Services FAQ expands correctly. Desktop Contact and Properties and mobile Contact/Services screenshots were reviewed.
 - The final Areas image path replacement was made after the local build started; the deployment build validates those final references.
+
+## Follow-up — 8 October 2026
+
+- Contact drafts now offer copying to another app, reject whitespace-only messages, and select the message for manual copying when clipboard access fails.
+- Property cards use responsive Next.js images, respect reduced-motion preferences, show listing-kind badges, and provide a missing-photo fallback.
+- Area links have larger touch targets and accessible names identifying the resort.
+- Changed-file lint and TypeScript passed. Browser checks verified successful/stubbed clipboard copying, clipboard-denied fallback, whitespace validation, mobile layout and optimized image loading. No enquiry was sent.

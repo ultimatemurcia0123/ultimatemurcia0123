@@ -1,15 +1,16 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { Bed, Bath, Maximize2, MapPin, ArrowRight } from 'lucide-react';
 import type { Property } from '@/types/property';
 
 export default function PropertyCard({ property }: { property: Property }) {
   const href = '/properties/' + property.id;
   const price = new Intl.NumberFormat('en-IE', { style: 'currency', currency: property.currency, maximumFractionDigits: 0 }).format(property.price);
+  const badge = property.status === 'sold' ? 'Sold' : property.status === 'under_offer' ? 'Under offer' : property.listingKind === 'rental' ? 'To rent' : property.listingKind === 'new-build' ? 'New build' : 'For sale';
   return <article className="group bg-white rounded-xl overflow-hidden border border-neutral-200 shadow-sm hover:shadow-md transition-shadow flex flex-col">
     <Link href={href} className="relative aspect-[16/9] overflow-hidden bg-neutral-100 block" aria-label={'View ' + property.title}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img src={property.images[0]} alt={property.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
-      <span className="absolute top-3 left-3 bg-[#00F34A] text-black font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full">{property.status === 'sold' ? 'Sold' : property.status === 'under_offer' ? 'Under offer' : 'For sale'}</span>
+      {property.images[0] ? <Image src={property.images[0]} alt={property.title} fill sizes="(min-width: 1024px) 420px, (min-width: 768px) 50vw, 100vw" className="object-cover group-hover:scale-105 transition-transform duration-500 motion-reduce:transform-none" /> : <span className="absolute inset-0 flex items-center justify-center text-sm text-neutral-500">Photographs available on enquiry</span>}
+      <span className="absolute top-3 left-3 bg-[#00F34A] text-black font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full">{badge}</span>
     </Link>
     <div className="p-4 flex-1 flex flex-col">
       <div className="flex justify-between items-center gap-3"><p className="text-[22px] font-extrabold tracking-tight">{price}</p><Link href={href} aria-label={'Details for ' + property.title} className="w-11 h-11 shrink-0 rounded-full border border-neutral-200 flex items-center justify-center group-hover:bg-[#00F34A]"><ArrowRight size={16} /></Link></div>
