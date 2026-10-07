@@ -18,7 +18,7 @@ export default async function ResortPage({ params }: { params: Promise<{ slug: s
   if (!resort) notFound();
   const properties = PROPERTIES_DATA.filter(p => p.resortId === resort.id);
   return <div className="inner-page">
-    <PageHero eyebrow={resort.location} title={resort.name} description={resort.tagline}>
+    <PageHero image="/images/areas-hero-v1.webp" eyebrow={resort.location} title={resort.name} description={resort.tagline}>
       <Link href="/resorts" className="inline-flex items-center gap-2 text-sm text-neutral-300 hover:text-white"><ArrowLeft size={16} />All areas</Link>
     </PageHero>
     <div className="page-shell page-section space-y-12">

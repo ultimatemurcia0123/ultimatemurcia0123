@@ -7,7 +7,7 @@ import { SITE_CONTENT } from '@/data/site-content';
 export const metadata: Metadata = { title: 'About us | Ultimate Murcia', description: 'Meet Ultimate Murcia, a local property company helping buyers and sellers in Murcia and Alicante.' };
 export default function AboutPage() {
   return <div className="inner-page">
-    <PageHero eyebrow="ABOUT ULTIMATE MURCIA" title="Local people." highlight="Personal service." description="A property company based in Murcia, helping you find a home that suits your life." image="/images/help-terrace-v2.webp" />
+    <PageHero eyebrow="ABOUT ULTIMATE MURCIA" title="Local people." highlight="Personal service." description="A property company based in Murcia, helping you find a home that suits your life." image="/images/contact-hero-v1.webp" />
     <div className="page-shell page-section space-y-12">
       <section className="grid md:grid-cols-[1.5fr_1fr] gap-10 items-start">
         <div className="space-y-5">

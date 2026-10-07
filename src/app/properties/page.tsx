@@ -22,14 +22,14 @@ export default async function PropertiesPage({ searchParams }: { searchParams: P
     (!resort || p.resortId === resort) && (!type || p.type === type) &&
     (!Number(bedrooms) || p.bedrooms >= Number(bedrooms)) &&
     (!(Number(maxPrice) > 0) || p.price <= Number(maxPrice)) &&
-    (!kind || p.listingKind === kind) && (!pool || p.hasPrivatePool || p.hasCommunalPool)
+    (kind ? p.listingKind === kind : p.listingKind !== 'rental') && (!pool || p.hasPrivatePool || p.hasCommunalPool)
   ).sort((a,b) => sort === 'price-asc' ? a.price-b.price : sort === 'price-desc' ? b.price-a.price : 0);
   const areas = [...RESORTS_DATA.map(r => ({id:r.id,name:r.name})), {id:'los-alcazares',name:'Los Alcázares'}, {id:'roda-golf',name:'Roda Golf Resort'}, {id:'altaona-golf',name:'Altaona Golf Resort'}];
   const originalUrl = kind === 'rental' ? 'https://ultimatemurcia.com/rental-property/' : kind === 'new-build' ? 'https://ultimatemurcia.com/new-build-property/' : 'https://ultimatemurcia.com/all-properties-card-v2/';
   return <div className="inner-page">
-    <PageHero eyebrow="FIND YOUR NEXT HOME" title="A place to" highlight="call your own." description="Explore selected homes in Murcia. Tell us what you’re looking for if you’d like a wider search." />
+    <PageHero image="/images/properties-hero-v1.webp" eyebrow="FIND YOUR NEXT HOME" title="A place to" highlight="call your own." description="Explore selected homes in Murcia. Tell us what you’re looking for if you’d like a wider search." />
     <div className="page-shell page-section space-y-8">
-      <form action="/properties" className="surface-card" key={JSON.stringify(params)}>
+      <form action="/properties" className="surface-card property-filters" key={JSON.stringify(params)}>
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           <div><label htmlFor="property-area" className="field-label">Area</label><select id="property-area" name="resort" defaultValue={resort} className="form-field"><option value="">Any area</option>{areas.map(area => <option key={area.id} value={area.id}>{area.name}</option>)}</select></div>
           <div><label htmlFor="property-type" className="field-label">Property type</label><select id="property-type" name="type" defaultValue={type} className="form-field"><option value="">Any type</option><option value="villa">Villa</option><option value="semi-detached">Semi-detached</option><option value="apartment">Apartment</option><option value="townhouse">Townhouse</option><option value="penthouse">Penthouse</option></select></div>
@@ -39,7 +39,7 @@ export default async function PropertiesPage({ searchParams }: { searchParams: P
         <details className="mt-5" open={Boolean(query || kind || pool || sort)}>
           <summary className="text-sm font-semibold cursor-pointer">More options</summary>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
-            <div><label htmlFor="property-query" className="field-label">Name or reference</label><input id="property-query" name="q" defaultValue={query} className="form-field" placeholder="Search properties" /></div>
+            <div><label htmlFor="property-query" className="field-label">Name or reference</label><input id="property-query" name="q" defaultValue={query} className="form-field" placeholder="Name or reference…" /></div>
             <div><label htmlFor="property-kind" className="field-label">Looking for</label><select id="property-kind" name="kind" defaultValue={kind} className="form-field"><option value="">All homes for sale</option><option value="resale">Resale</option><option value="new-build">New build</option><option value="rental">Rental</option></select></div>
             <div><label htmlFor="property-sort" className="field-label">Sort by</label><select id="property-sort" name="sort" defaultValue={sort} className="form-field"><option value="">Featured order</option><option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option></select></div>
           </div>

@@ -78,8 +78,9 @@ export default function RootLayout({
       className={`${jakarta.variable} ${barlow.variable} ${marker.variable} ${handwriting.variable} scroll-smooth`}
     >
       <body className="font-sans min-h-screen flex flex-col bg-white text-slate-900 antialiased selection:bg-[#00D26A] selection:text-slate-950">
+        <a href="#main-content" className="skip-link">Skip to content</a>
         <Navbar />
-        <main className="flex-grow">{children}</main>
+        <main id="main-content" tabIndex={-1} className="flex-grow">{children}</main>
         <Footer />
         <WhatsAppFloatingButton />
       </body>

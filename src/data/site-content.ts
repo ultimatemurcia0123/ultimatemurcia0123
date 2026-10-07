@@ -7,6 +7,7 @@ export interface SiteContent {
     whatsappNumber: string;
     email: string;
     location: string;
+    facebookUrl: string;
   };
   hero: {
     badgeTop: string;
@@ -69,6 +70,7 @@ export const SITE_CONTENT: SiteContent = {
     whatsappNumber: '34711093154',
     email: 'info@ultimatemurcia.com',
     location: 'La Torre Golf Resort, 30709 Murcia, Spain',
+    facebookUrl: 'https://www.facebook.com/ultimatemurcia/',
   },
   hero: {
     badgeTop: 'MURCIA & COSTA CÁLIDA',

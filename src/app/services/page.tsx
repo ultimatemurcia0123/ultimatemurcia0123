@@ -23,6 +23,27 @@ export default function ServicesPage() {
         </section>)}
       </div>
       <p className="page-copy max-w-3xl">Property management and aftersales work are carried out by independent providers. Services, availability and fees are agreed directly with them.</p>
+      <section aria-labelledby="next-steps-heading" className="border-t border-neutral-200 pt-10">
+        <p className="text-xs font-bold tracking-[.18em] uppercase text-emerald-800 mb-3">Your next step</p>
+        <h2 id="next-steps-heading" className="section-heading">A conversation is a good place to start.</h2>
+        <ol className="grid md:grid-cols-3 gap-8 mt-8">
+          {[
+            ['Tell us your plans', 'Share your preferred areas, budget and timeframe, or a few details about the home you want to sell.'],
+            ['Explore your options', 'Talk through suitable properties, a selling approach or the local support you need.'],
+            ['Agree the next step', 'Arrange a viewing, discuss a listing or speak with an independent service provider.'],
+          ].map(([title, text], index) => <li key={title} className="flex gap-4"><span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#e6fbf0] text-emerald-800 text-sm font-bold" aria-hidden="true">0{index + 1}</span><div><h3 className="font-bold">{title}</h3><p className="page-copy mt-2">{text}</p></div></li>)}
+        </ol>
+      </section>
+      <section className="grid md:grid-cols-[.8fr_1.2fr] gap-8" aria-labelledby="services-questions">
+        <div><p className="text-xs font-bold tracking-[.18em] uppercase text-emerald-800 mb-3">A few useful details</p><h2 id="services-questions" className="section-heading">Before we get started</h2></div>
+        <div className="space-y-3">
+          {[
+            ['Is the property finding service free?', 'Yes. Our property finding service is free. Any purchase costs or independent professional fees are separate and should be confirmed before you proceed.'],
+            ['Can you help outside the listed resorts?', 'Yes. We help with coastal, rural and resort homes across Murcia and Alicante. Tell us which locations you’re considering.'],
+            ['Who carries out property management and maintenance?', 'We can introduce you to independent local providers. You agree the work, availability and fees directly with them.'],
+          ].map(([question, answer]) => <details key={question} className="surface-card"><summary className="font-bold cursor-pointer leading-relaxed">{question}</summary><p className="page-copy mt-4">{answer}</p></details>)}
+        </div>
+      </section>
       <ContactCta title="Not sure where to start?" description="A short conversation about your plans is enough to get started." />
     </div>
   </div>;
