@@ -31,7 +31,7 @@ export default function HomePage() {
             </div>
 
             {/* Right: View all link & carousel buttons */}
-            <div className="flex items-center gap-4">
+            <div className="hidden sm:flex items-center gap-4">
               <Link
                 href={featuredPropertiesSection.viewAllLink}
                 className="text-xs font-medium text-slate-800 hover:text-[#00F34A] transition-colors flex items-center gap-1.5"
@@ -52,7 +52,7 @@ export default function HomePage() {
           </div>
 
           <p className="mt-3 text-xs leading-5 text-neutral-500">Selected listings. Please confirm current availability with the team.</p>
-          <div className="text-center mt-12 sm:hidden">
+          <div className="text-center mt-6 sm:hidden">
             <Link
               href="/properties"
               className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold text-xs uppercase tracking-wider px-6 py-3.5 rounded-full"

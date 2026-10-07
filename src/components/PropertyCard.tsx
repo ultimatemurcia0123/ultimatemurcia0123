@@ -12,7 +12,7 @@ export default function PropertyCard({ property }: { property: Property }) {
       <span className="absolute top-3 left-3 bg-[#00F34A] text-black font-bold text-[11px] uppercase tracking-wider px-3 py-1.5 rounded-full">{property.status === 'sold' ? 'Sold' : property.status === 'under_offer' ? 'Under offer' : 'For sale'}</span>
     </Link>
     <div className="p-4 flex-1 flex flex-col">
-      <div className="flex justify-between items-center gap-3"><p className="text-[22px] font-extrabold tracking-tight">{price}</p><Link href={href} aria-label={'Details for ' + property.title} className="w-8 h-8 rounded-full border border-neutral-200 flex items-center justify-center group-hover:bg-[#00F34A]"><ArrowRight size={16} /></Link></div>
+      <div className="flex justify-between items-center gap-3"><p className="text-[22px] font-extrabold tracking-tight">{price}</p><Link href={href} aria-label={'Details for ' + property.title} className="w-11 h-11 shrink-0 rounded-full border border-neutral-200 flex items-center justify-center group-hover:bg-[#00F34A]"><ArrowRight size={16} /></Link></div>
       <h3 className="text-sm font-bold mt-2 leading-relaxed"><Link href={href} className="hover:underline">{property.title}</Link></h3>
       <p className="flex items-center gap-1.5 text-xs text-neutral-500 mt-2 mb-4"><MapPin size={14} />{property.resortName}</p>
       <div className="flex flex-wrap gap-4 text-xs text-neutral-600 mt-auto">

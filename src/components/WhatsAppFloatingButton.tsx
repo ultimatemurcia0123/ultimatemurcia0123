@@ -8,7 +8,7 @@ export default function WhatsAppFloatingButton() {
   const [showTooltip, setShowTooltip] = useState(true);
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex items-end gap-3">
+    <div className="fixed bottom-[max(12px,env(safe-area-inset-bottom))] right-3 sm:bottom-6 sm:right-6 z-50 flex items-end gap-3">
       {showTooltip && (
         <div className="hidden sm:flex items-center gap-2 bg-white text-slate-800 text-xs py-2 px-3.5 rounded-full shadow-xl border border-slate-200/80 animate-fade-in">
           <span>Need property advice? <strong>Chat with Christine</strong></span>
@@ -27,7 +27,7 @@ export default function WhatsAppFloatingButton() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"
-        className="group relative flex items-center justify-center w-14 h-14 bg-[#00F34A] hover:bg-[#00D43E] text-slate-950 rounded-full shadow-2xl hover:shadow-[#00F34A]/40 transition-all duration-300 hover:scale-105"
+        className="group relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-[#00F34A] hover:bg-[#00D43E] text-slate-950 rounded-full shadow-2xl hover:shadow-[#00F34A]/40 transition-all duration-300 hover:scale-105"
       >
         <span className="absolute -top-1 -right-1 flex h-3.5 w-3.5">
           <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#00F34A] opacity-75"></span>

@@ -405,3 +405,37 @@ body {
   .home-benefit, .home-benefit:first-child, .home-benefit:last-child { padding: 4px 6px; gap: 8px; }
   .home-benefit svg { width: 26px; height: 26px; flex-basis: 26px; }
 }
+
+/* Phone layouts: compact search, even gutters and comfortable touch targets. */
+@media (max-width: 767px) {
+  .home-hero-copy { padding: 28px 20px 12px; }
+  .home-hero-copy h1 { margin-block: 14px; font-size: clamp(2.5rem, 10vw, 4rem); }
+  .home-hero-copy p { max-width: 440px; margin-inline: auto; line-height: 1.65; }
+  .home-hero-stage { padding-bottom: 170px; }
+  .hero-lettering-sun { bottom: 8px; width: 96px; }
+  .home-search { border-radius: 16px; padding: 14px; }
+  .home-search-tabs { margin-bottom: 16px; }
+  .home-search-form { gap: 14px 10px; }
+  .home-search-label { font-size: 12px; gap: 5px; }
+  .home-search-field select { padding-left: 10px; }
+  .home-benefits { margin-top: 16px; padding-block: 12px 20px; }
+  .home-benefit, .home-benefit:first-child, .home-benefit:last-child { justify-content: flex-start; align-items: flex-start; }
+  .home-benefit svg { margin-top: 3px; }
+  .home-benefit h3 { line-height: 1.5; }
+  .home-properties { padding-block: 28px; }
+  .home-discover { padding-block: 32px; }
+  .home-discover-copy h2 { font-size: clamp(1.65rem, 6.5vw, 2.5rem); }
+  .home-discover-copy p { font-size: 14px; margin-block: 16px; }
+  .home-reference-cutout { max-width: 220px; }
+  .home-help { padding-block: 28px; }
+  .home-help-title { font-size: clamp(1.6rem, 6.5vw, 2rem); line-height: 1.15; }
+  .home-help-intro { margin-bottom: 20px; }
+  .home-help-card { padding: 14px; align-items: flex-start; }
+  .home-help-card h3 { font-size: 14px; }
+  .home-help-card p { font-size: 13px; }
+  .form-field { font-size: 16px; }
+}
+@media (min-width: 360px) and (max-width: 767px) {
+  .home-search-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .home-search-field:nth-child(-n+2) { grid-column: 1 / -1; }
+}
