@@ -43,19 +43,12 @@ function SearchField({
   children: React.ReactNode;
 }) {
   return (
-    <label className="group relative flex items-center gap-3 rounded-xl border border-white/25 bg-black/15 px-4 py-2 hover:border-[#00F34A]/60 focus-within:border-[#00F34A] focus-within:ring-2 focus-within:ring-[#00F34A]/25 transition-all cursor-pointer">
-      <Icon className="w-5 h-5 text-slate-300 group-hover:text-[#00F34A] shrink-0 transition-colors" />
-      <span className="flex-1 min-w-0">
-        <span className="block text-[10px] leading-4 font-medium text-white/75">{label}</span>
-        <select
-          value={value}
-          onChange={(e) => onChange(e.target.value)}
-          className="w-full bg-transparent text-xs leading-4 font-medium text-white focus:outline-none cursor-pointer appearance-none pr-5"
-        >
-          {children}
-        </select>
-      </span>
-      <ChevronDown className="w-4 h-4 text-slate-400 absolute right-3 pointer-events-none" />
+    <label className="home-search-field">
+      <span className="home-search-label"><Icon size={16} aria-hidden="true" />{label}</span>
+      <select value={value} onChange={(e) => onChange(e.target.value)}>
+        {children}
+      </select>
+      <ChevronDown className="home-search-chevron" size={18} aria-hidden="true" />
     </label>
   );
 }
@@ -82,7 +75,7 @@ export default function HeroSearch() {
   };
 
   const { hero } = SITE_CONTENT;
-  const optionClass = 'bg-[#080808] text-white';
+  const optionClass = 'bg-white text-neutral-900';
 
   return (
     <section className="home-hero relative text-white overflow-hidden">
@@ -118,7 +111,7 @@ export default function HeroSearch() {
       <div className="home-hero-tools relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Search card with tabs */}
         <div className="home-search">
-          <div className="inline-flex items-center gap-1 rounded-t-2xl bg-[#050505]/95 backdrop-blur-xl border border-b-0 border-slate-700/60 px-3 pt-2 pb-1">
+          <div className="home-search-tabs" role="group" aria-label="Property listing category">
             {hero.tabs.map((tab) => {
               const isActive = activeTab === tab;
               return (
@@ -126,11 +119,8 @@ export default function HeroSearch() {
                   key={tab}
                   type="button"
                   onClick={() => setActiveTab(tab as Tab)}
-                  className={`text-xs font-semibold px-6 py-1.5 rounded-full transition-all ${
-                    isActive
-                      ? 'bg-[#00F34A] text-slate-950 shadow-[0_6px_20px_-6px_rgba(0,243,74,0.9)]'
-                      : 'text-slate-300 hover:text-white'
-                  }`}
+                  aria-pressed={isActive}
+                  className={`home-search-tab ${isActive ? 'is-active' : ''}`}
                 >
                   {tab}
                 </button>
@@ -139,7 +129,7 @@ export default function HeroSearch() {
           </div>
           <form
             onSubmit={handleSearch}
-            className="rounded-2xl rounded-tl-none bg-[#050505]/95 backdrop-blur-xl border border-slate-700/60 p-3 shadow-2xl shadow-black/60 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-3"
+            className="home-search-form" role="search" aria-label="Find a property"
           >
             <SearchField icon={MapPin} label="Location" value={location} onChange={setLocation}>
               <option value="" className={optionClass}>Any area</option>
@@ -167,7 +157,7 @@ export default function HeroSearch() {
               <option value="3" className={optionClass}>3+ bedrooms</option>
               <option value="4" className={optionClass}>4+ bedrooms</option>
             </SearchField>
-            <SearchField icon={Euro} label="Price range" value={priceRange} onChange={setPriceRange}>
+            <SearchField icon={Euro} label="Maximum price" value={priceRange} onChange={setPriceRange}>
               <option value="" className={optionClass}>Any</option>
               <option value="150000" className={optionClass}>Up to €150,000</option>
               <option value="250000" className={optionClass}>Up to €250,000</option>
@@ -177,9 +167,9 @@ export default function HeroSearch() {
             </SearchField>
             <button
               type="submit"
-              className="group h-full min-h-[46px] rounded-2xl bg-[#00F34A] hover:bg-[#00D43E] text-slate-950 font-bold text-sm px-6 flex items-center justify-center gap-2 transition-all shadow-[0_10px_30px_-10px_rgba(0,243,74,0.9)]"
+              className="home-search-submit"
             >
-              Search
+              Search properties
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </form>
