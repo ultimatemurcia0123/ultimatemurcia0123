@@ -124,7 +124,7 @@ body {
 .home-primary-button:hover { background: #00d43e; transform: translateY(-2px); }
 .home-video-button { display: inline-flex; gap: 10px; align-items: center; border: 1px solid white; background: rgb(0 8 15 / 55%); padding: 8px 22px 8px 10px; border-radius: 999px; font-size: 12px; font-weight: 700; }
 .home-video-button:hover { background: rgb(0 8 15 / 85%); }
-.home-hero-tools { margin-top: -37px; }
+.home-hero-tools { margin-top: -37px; padding-bottom: 24px; }
 .home-search { position: relative; padding-bottom: 32px; }
 .home-discover { position: relative; overflow: hidden; padding: 42px 0; color: white; background: #000000 url('/images/discover-dark-reference-v3.webp') center / cover; }
 .home-discover-grid { display: grid; grid-template-columns: 1fr 2fr 1fr; align-items: center; gap: 38px; }
@@ -184,16 +184,6 @@ body {
 .home-page .max-w-7xl { max-width: 1380px; }
 @media (min-width: 768px) { .home-page .max-w-7xl { padding-left: 4.5%; padding-right: 4.5%; } .home-discover { padding: 32px 0; } .home-discover-grid { gap: 30px; } }
 
-.home-benefits { position: relative; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; padding: 18px 0; margin-top: 0; background: #000000; box-shadow: 0 0 0 100vmax #000000; clip-path: inset(0 -100vmax); }
-.home-benefit { display: flex; align-items: center; gap: 12px; min-width: 0; padding: 0 12px; border-right: 1px solid #ffffff12; }
-.home-benefit:first-child { padding-left: 0; }
-.home-benefit:last-child { border-right: 0; padding-right: 0; }
-.home-benefit svg { width: 42px; height: 42px; flex: 0 0 42px; }
-.home-benefit h3 { font-size: 12px; line-height: 1.4; white-space: nowrap; }
-.home-benefit p { font-size: 11px; line-height: 1.5; margin-top: 2px; }
-@media (max-width: 1023px) { .home-benefit { padding: 0 10px; gap: 9px; } .home-benefit svg { width: 35px; height: 35px; flex-basis: 35px; } .home-benefit h3 { font-size: 11px; } .home-benefit p { font-size: 10px; } }
-@media (max-width: 767px) { .home-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 14px; } .home-benefit, .home-benefit:first-child, .home-benefit:last-child { padding: 0; border: 0; } }
-
 /* Reference-sized typography and paper artwork. */
 
 .reference-handwriting { position: absolute; z-index: 1; font-family: var(--font-handwriting), cursive; font-weight: 400; color: #fff; text-align: center; transform: rotate(-10deg); }
@@ -235,12 +225,10 @@ body {
   .home-help-intro { width: 100%; grid-template-columns: 1fr; }
   .home-help-cards { width: 100%; }
   .home-help-card > div { padding-top: 0; }
-  .home-benefit h3 { white-space: normal; }
 }
 
 @media (min-width: 1024px) {
   .home-help-intro > div:last-child { padding-top: 18px; }
-  .home-benefit p { font-size: 10.5px; }
 }
 
 /* Full-bleed scenery; typography and controls size independently. */
@@ -354,8 +342,7 @@ footer { padding-bottom: 64px; }
 .home-help-card > div { padding-top: 0; }
 .home-help-intro .home-primary-button { min-height: 44px; font-size: 13px; }
 .home-properties { padding-block: 36px; }
-/* Leave breathing room between the finder and the benefits strip. */
-.home-benefits { margin-top: 24px; }
+
 @media (min-width: 768px) {
   .home-hero-tools { margin-top: -44px; }
   .home-search-field select { min-height: 48px; padding-block: 10px; }
@@ -388,9 +375,6 @@ footer { padding-bottom: 64px; }
 }
 @media (max-width: 479px) {
   .home-search-form { grid-template-columns: minmax(0, 1fr); }
-  .home-benefits { grid-template-columns: minmax(0, 1fr); gap: 20px; padding-block: 28px; }
-  .home-benefit h3 { font-size: 14px; }
-  .home-benefit p { font-size: 12px; }
 }
 
 /* Compact service cards, with the introduction kept beside the heading. */
@@ -418,25 +402,6 @@ footer { padding-bottom: 64px; }
   .home-help-card h3 { min-height: 0; }
 }
 
-/* Slim benefits strip: equally sized columns with centred icon/text groups. */
-.home-benefits { gap: 0; padding-block: 12px; }
-.home-benefit, .home-benefit:first-child, .home-benefit:last-child {
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  text-align: left;
-  padding: 4px 12px;
-  gap: 10px;
-}
-.home-benefit svg { width: 30px; height: 30px; flex-basis: 30px; }
-.home-benefit h3 { white-space: normal; font-size: 12px; }
-.home-benefit p { font-size: 11px; }
-@media (max-width: 767px) {
-  .home-benefits { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 0; }
-  .home-benefit, .home-benefit:first-child, .home-benefit:last-child { padding: 4px 6px; gap: 8px; }
-  .home-benefit svg { width: 26px; height: 26px; flex-basis: 26px; }
-}
-
 /* Phone layouts: compact search, even gutters and comfortable touch targets. */
 @media (max-width: 767px) {
   .home-hero-copy { padding: 28px 20px 12px; }
@@ -449,10 +414,7 @@ footer { padding-bottom: 64px; }
   .home-search-form { gap: 14px 10px; }
   .home-search-label { font-size: 12px; gap: 5px; }
   .home-search-field select { padding-left: 10px; }
-  .home-benefits { margin-top: 16px; padding-block: 12px 20px; }
-  .home-benefit, .home-benefit:first-child, .home-benefit:last-child { justify-content: flex-start; align-items: flex-start; }
-  .home-benefit svg { margin-top: 3px; }
-  .home-benefit h3 { line-height: 1.5; }
+
   .home-properties { padding-block: 28px; }
   .home-discover { padding-block: 32px; }
   .home-discover-copy h2 { font-size: clamp(1.65rem, 6.5vw, 2.5rem); }

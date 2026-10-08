@@ -9,23 +9,12 @@ import {
   BedDouble,
   Euro,
   ArrowRight,
-  Gem,
-  Sun,
-  ShieldCheck,
   ChevronDown,
   X,
 } from 'lucide-react';
 import { RESORTS_DATA } from '@/data/resorts';
 import { SITE_CONTENT } from '@/data/site-content';
 import { IMAGES } from '@/data/images';
-import LocalPalmIcon from '@/components/LocalPalmIcon';
-
-const PILLAR_ICONS = {
-  palm: LocalPalmIcon,
-  diamond: Gem,
-  sun: Sun,
-  shield: ShieldCheck,
-} as const;
 
 type Tab = 'Buy' | 'Rent' | 'New Builds';
 
@@ -173,22 +162,6 @@ export default function HeroSearch() {
               <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </button>
           </form>
-        </div>
-
-        {/* Value pillars */}
-        <div className="home-benefits">
-          {hero.valuePillars.map((pillar) => {
-            const Icon = PILLAR_ICONS[pillar.iconType];
-            return (
-              <div key={pillar.title} className="home-benefit">
-                <Icon className="w-10 h-10 sm:w-11 sm:h-11 text-[#00F34A] shrink-0" strokeWidth={1.6} />
-                <div className="min-w-0">
-                  <h3 className="text-xs sm:text-sm font-bold text-white">{pillar.title}</h3>
-                  <p className="text-[11px] sm:text-xs text-slate-300">{pillar.subtitle}</p>
-                </div>
-              </div>
-            );
-          })}
         </div>
       </div>
 
