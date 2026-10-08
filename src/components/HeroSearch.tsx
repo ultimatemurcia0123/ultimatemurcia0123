@@ -91,7 +91,7 @@ export default function HeroSearch() {
             <span className="block text-[#00F34A]">{hero.headlinePart2}</span>
           </h1>
           <p>Exceptional properties. A brighter lifestyle.<br />{' '}We help you buy or sell in Murcia and Costa Cálida.</p>
-          <div className="flex justify-center mt-3.5">
+          <div className="home-hero-browse flex justify-center mt-3.5">
             <Link href={hero.primaryCtaLink} className="home-primary-button">
               {hero.primaryCtaText}<ArrowRight className="w-4 h-4" />
             </Link>
