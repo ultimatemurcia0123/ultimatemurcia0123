@@ -70,6 +70,7 @@ export default function HeroSearch() {
     <section className="home-hero relative text-white overflow-hidden">
       <div className="home-hero-stage">
         <picture>
+          <source media="(max-width: 767px)" srcSet="/images/hero-reference-v2.webp" />
           <source media="(min-width: 1100px)" srcSet="/images/hero-reference-v2.webp" />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={IMAGES.hero.garden} alt="Mediterranean villa, pool and tropical garden overlooking the coast" className="home-hero-scene" width={1774} height={887} fetchPriority="high" />
@@ -89,7 +90,7 @@ export default function HeroSearch() {
             <span className="block">{hero.headlinePart1}</span>
             <span className="block text-[#00F34A]">{hero.headlinePart2}</span>
           </h1>
-          <p>Exceptional properties. A brighter lifestyle.<br />We help you buy or sell in Murcia and Costa Cálida.</p>
+          <p>Exceptional properties. A brighter lifestyle.<br />{' '}We help you buy or sell in Murcia and Costa Cálida.</p>
           <div className="flex justify-center mt-3.5">
             <Link href={hero.primaryCtaLink} className="home-primary-button">
               {hero.primaryCtaText}<ArrowRight className="w-4 h-4" />

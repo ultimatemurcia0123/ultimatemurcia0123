@@ -13,7 +13,7 @@ export default function WhatsAppFloatingButton() {
   if (pathname === '/contact') return null;
 
   return (
-    <div className="fixed bottom-[max(12px,env(safe-area-inset-bottom))] right-3 sm:bottom-6 sm:right-6 z-50 flex items-end gap-3">
+    <div className={`fixed bottom-[max(12px,env(safe-area-inset-bottom))] right-3 sm:bottom-6 sm:right-6 z-50 items-end gap-3 ${pathname === '/' ? 'hidden sm:flex' : 'flex'}`}>
       {showTooltip && (
         <div className="hidden sm:flex items-center gap-2 bg-white text-slate-800 text-xs py-2 px-3.5 rounded-full shadow-xl border border-slate-200/80 animate-fade-in">
           <span>Need property advice? <strong>Chat with Christine</strong></span>

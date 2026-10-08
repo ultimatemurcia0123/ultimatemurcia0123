@@ -430,5 +430,29 @@ footer { padding-bottom: 64px; }
 }
 @media (min-width: 360px) and (max-width: 767px) {
   .home-search-form { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .home-search-field:nth-child(-n+2) { grid-column: 1 / -1; }
+
+}
+
+/* A continuous scenic hero and compact finder on phones. */
+@media (max-width: 767px) {
+  .home-hero { background: #f7f8f5; }
+  .home-hero-stage { height: auto; min-height: 330px; padding-bottom: 48px; }
+  .home-hero-scene { inset: 0; width: 100%; height: 100%; min-height: 100%; object-fit: cover; object-position: 42% center; }
+  .home-hero-shade { height: 100%; background: linear-gradient(180deg, rgb(3 16 28 / 52%), rgb(3 16 28 / 38%) 65%, rgb(3 16 28 / 12%)); }
+  .home-hero-copy { width: 100%; max-width: 480px; padding: 32px 20px 16px; }
+  .home-hero-copy .eyebrow { font-size: 10px; letter-spacing: .22em; }
+  .home-hero-copy h1 { margin-block: 14px; font-size: clamp(2rem, 9vw, 3.5rem); line-height: 1.08; }
+  .home-hero-copy p { max-width: 340px; font-size: 14px; line-height: 1.6; text-wrap: pretty; }
+  .home-hero-copy p br { display: none; }
+  .hero-lettering { display: none; }
+  .home-hero-tools { margin-top: -24px; padding-bottom: 24px; }
+  .home-search { padding: 16px; border-radius: 18px; box-shadow: 0 8px 24px rgb(15 23 42 / 8%); }
+  .home-search-tabs { margin-bottom: 16px; }
+  .home-search-tab { font-size: 13px; white-space: nowrap; }
+  .home-search-form { gap: 14px 12px; }
+  .home-search-label { font-size: 11px; gap: 5px; }
+  .home-search-label svg { width: 14px; height: 14px; }
+  .home-search-field select { min-height: 48px; padding: 10px 28px 10px 10px; }
+  .home-search-chevron { right: 8px; bottom: 15px; width: 16px; }
+  .home-search-submit { min-height: 48px; font-size: 14px; }
 }
